@@ -1,34 +1,28 @@
 module.exports = {
   reactStrictMode: true,
-  async rewrites() {
-    return [
-      {
-        source: "/",
-        destination: "/landing-page/landing-page-with-components",
-      }
-    ];
-  },
-  redirects() {
+  async redirects() {
     const sourcesRequiringAuthToken = [
-      "/", "/landing-page/:slug*", "/blog/:path*"
-    ]
+      "/", "/:slug*",
+    ];
 
-    return process.env.NEXT_PUBLIC_BUTTER_CMS_API_KEY ? [
-      {
-        source: "/missing-token",
-        destination: "/",
-        permanent: false
-      }
-    ] : sourcesRequiringAuthToken.map(source => ({
-      source: source,
-      destination: "/missing-token",
-      permanent: false
-    })
-    )
+    if (process.env.NEXT_PUBLIC_BUTTER_CMS_API_KEY) {
+      return [
+        {
+          source: "/missing-token",
+          destination: "/",
+          permanent: false,
+        }
+      ];
+    } else {
+      return sourcesRequiringAuthToken.map(source => ({
+        source: source,
+        destination: "/missing-token",
+        permanent: false,
+      }));
+    }
   },
   images: {
     domains: ["cdn.buttercms.com"],
     dangerouslyAllowSVG: true,
   },
 };
-
