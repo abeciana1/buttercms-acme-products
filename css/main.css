@@ -2,6 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "OptiScript";
+  src: url(./fonts/OPTISport-Script.ttf.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "FuturaPT";
+  src: url(./fonts/futura-pt.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "FuturaPT Bold";
+  src: url(./fonts/futura-pt-bold.woff) format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
 html {
   scroll-behavior: smooth;
 }

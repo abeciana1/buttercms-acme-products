@@ -15,6 +15,11 @@ module.exports = {
         brown: '#603D20',
         black: '#101820',
         white: '#fff'
+      },
+      fontFamily: {
+        'optiscript': ["OptiScript", "Times New Roman"],
+        'futuraPT': ["FuturaPT"],
+        'futuraPT-bold': ["FuturaPT Bold"]
       }
     },
   },
