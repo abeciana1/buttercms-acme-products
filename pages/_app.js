@@ -4,12 +4,11 @@ import { getMainMenu } from "@/lib/api"
 import '@/css/main.css'
 
 function MyApp({ Component, pageProps, mainMenu }) {
-  console.log('Component', Component);
-  console.log('pageProps', pageProps);
-
-  return <>
-    <Component {...pageProps} />
-  </>
+  return(
+    <>
+      <Component {...pageProps} />
+    </>
+  )
 
 }
 
