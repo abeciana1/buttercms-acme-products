@@ -1,13 +1,15 @@
 import App from "next/app"
 import { getMainMenu } from "@/lib/api"
+import { Provider } from'react-redux'
+import store from '@/lib/store'
 
 import '@/css/main.css'
 
 function MyApp({ Component, pageProps, mainMenu }) {
   return(
-    <>
+    <Provider store={store}>
       <Component {...pageProps} />
-    </>
+    </Provider>
   )
 
 }
