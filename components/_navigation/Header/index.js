@@ -115,8 +115,8 @@ const Header = ({ mainMenu }) => {
             </nav>
             <div className='flex flex-row gap-10'>
                 <Cart cartItems={5} cartTotal={35.46} />
-                <Link href='/my-account'>
-                    <FaCircleUser size={30} />
+                <Link title='My Account' href='/my-account'>
+                    <FaCircleUser size={35} />
                 </Link>
             </div>
         </header>
