@@ -12,7 +12,7 @@ const Header = ({ mainMenu }) => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     const { isMobile, isTablet, isDesktop } = useResponsiveness() || {}
 
-    console.log(mainMenu);
+    // console.log(mainMenu);
     
     const toggleExpand = () => {
         if (isDesktop) {
