@@ -31,6 +31,7 @@ body {
   font-style: normal;
   color: rgba(0, 0, 0, 0.7);
   overflow-x: hidden;
+  @apply bg-yellow-50;
 }
 
 * {
