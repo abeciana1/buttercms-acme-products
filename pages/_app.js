@@ -6,7 +6,7 @@ import store from '@/lib/store'
 import '@/css/main.css'
 
 // * components
-import Header from '@/components/Header'
+import Header from '@/components/_navigation/Header'
 
 function MyApp({ Component, pageProps, mainMenu }) {
   return(
