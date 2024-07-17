@@ -4,7 +4,8 @@ import Hamburger from 'hamburger-react'
 import cx from 'classnames'
 import Image from 'next/image'
 import Link from 'next/link'
-import { FaCartShopping, FaCircleUser } from "react-icons/fa6";
+import { FaCircleUser } from "react-icons/fa6";
+import Cart from '@/components/_navigation/Cart'
 
 const Header = ({ mainMenu }) => {
     const [expanded, setExpanded] = useState(false)
@@ -113,9 +114,7 @@ const Header = ({ mainMenu }) => {
                 }
             </nav>
             <div className='flex flex-row gap-10'>
-                <Link href='/cart'>
-                    <FaCartShopping size={30} />
-                </Link>
+                <Cart cartItems={5} cartTotal={35.46} />
                 <Link href='/my-account'>
                     <FaCircleUser size={30} />
                 </Link>
