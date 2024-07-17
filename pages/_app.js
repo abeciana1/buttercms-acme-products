@@ -5,9 +5,13 @@ import store from '@/lib/store'
 
 import '@/css/main.css'
 
+// * components
+import Header from '@/components/Header'
+
 function MyApp({ Component, pageProps, mainMenu }) {
   return(
     <Provider store={store}>
+      <Header key={mainMenu?.meta?.id} mainMenu={mainMenu} />
       <Component {...pageProps} />
     </Provider>
   )
