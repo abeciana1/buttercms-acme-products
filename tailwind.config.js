@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const colors = require('tailwindcss/colors')
+
 module.exports = {
   content: [
     "./pages/**/*.js",
@@ -14,7 +16,8 @@ module.exports = {
         red: '#E03C31',
         brown: '#603D20',
         black: '#101820',
-        white: '#fff'
+        white: '#fff',
+        ...colors
       },
       fontFamily: {
         'optiscript': ["OptiScript", "Times New Roman"],
