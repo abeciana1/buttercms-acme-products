@@ -7,15 +7,15 @@ import camelcaseKeys from 'camelcase-keys';
 export default function ComponentRenderer({ type, sectionData }) {
     console.log(type, sectionData)
 	const sectionsComponentPaths = () => ({
-		hero_section: dynamic(
-			() => import('@/components/_page-sections/HeroSection')
+		[type]: dynamic(
+			() => import(`@/components/_page-sections/${toPascalCase(type)}`)
 				.catch(() => () => <div>error</div>), {
 			loading: Preloader,
             ssr: true
 		})
 	});
     console.log(sectionsComponentPaths()[type])
-	const SectionComponent = sectionsComponentPaths()[type] || <div>missing</div>;
+	const SectionComponent = sectionsComponentPaths()[type] || <div>Missing component: {toPascalCase(type)}</div>;
 
 	return <SectionComponent type={type} {...camelcaseKeys(sectionData)} />
 }
