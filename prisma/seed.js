@@ -56,7 +56,7 @@ const main = async () => {
     //         }
     //     })
     //     console.log('prod', prod)
-    })
+    // })
 }
 
 
