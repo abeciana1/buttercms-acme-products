@@ -39,8 +39,8 @@ model FavoriteProduct {
 }
 
 model Product {
-  id                    Int                     @id @default(autoincrement())
-  sku                   String                  @unique
+  id                    Int               @id @default(autoincrement())
+  sku                   String            @unique
   name                  String
   headline              String
   description           String
@@ -51,12 +51,13 @@ model Product {
   discount              Float
   discountPrice         Float
   categoryId            Int
-  category              Category                @relation(fields: [categoryId], references: [id])
+  category              Category          @relation(fields: [categoryId], references: [id])
   parentProductId       Int?
-  parentProduct         Product?                @relation("ProductOptions", fields: [parentProductId], references: [id])
-  options               Product[]               @relation("ProductOptions")
+  parentProduct         Product?          @relation("ProductOptions", fields: [parentProductId], references: [id])
+  options               Product[]         @relation("ProductOptions")
   favoriteProducts      FavoriteProduct[]
   cartItems             CartItem[]
+  mainImage             String
 }
 
 model Category {
