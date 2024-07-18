@@ -10,9 +10,11 @@ const Cart = ({
             <Link title='Cart page' href='/cart'>
                 <FaCartShopping size={35} />
             </Link>
-            <div
-                className='absolute -top-2 -right-2 bg-altRed text-white text-md rounded-full leading-none py-0.5 px-1'
-            >{cartItems}</div>
+            {cartItems > 0 &&
+                <div
+                    className='absolute -top-2 -right-2 bg-altRed text-white text-md rounded-full leading-none py-0.5 px-1'
+                >{cartItems}</div>
+            }
         </div>
     )
 }
