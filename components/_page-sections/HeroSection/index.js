@@ -2,24 +2,6 @@ import { PageLayoutWrapper } from '@/components/_layouts'
 import Image from 'next/image'
 import { LinkLookLikeButton } from '@/components/_inputs/Links'
 
-// {
-//     "headline": "ACME: Unleash the Fun!",
-//     "body_text": "Dive into a world of quirky and innovative products designed to make you smile. Shop ACME for your next big laugh and brilliant solution!",
-//     "button_color": {
-//         "meta": {
-//             "id": 763563
-//         },
-//         "brand_color": "Red",
-//         "brand_colors_dd": "red"
-//     },
-//     "cta_label": "Shop our categories!",
-//     "cta_href": "c/all",
-//     "image": "https://cdn.buttercms.com/UcRd3hxSSEWPed6VCnoC",
-//     "image_alt_text": "ACME - This might hurt seal",
-//     "image_width": 150,
-//     "image_height": 150
-// }
-
 const HeroSection = ({
     headline,
     bodyText,
