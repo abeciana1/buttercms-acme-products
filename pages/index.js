@@ -15,7 +15,7 @@ const Home = ({ seo, body }) => {
                 // canonical="" blank for now
             />
             <PageLayoutWrapper>
-                {body?.map(({ type, fields: sectionData}, index) => {
+                {body?.body?.map(({ type, fields: sectionData}, index) => {
                     return <ComponentRenderer
                         key={type + index}
                         type={type}
