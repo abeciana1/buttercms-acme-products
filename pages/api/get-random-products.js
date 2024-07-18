@@ -5,7 +5,7 @@ const handler = async (req, res) => {
         const productsCount = await prisma.product.count();
         const skip = Math.floor(Math.random() * productsCount);
         const products = await prisma.product.findMany({
-            take: 4,
+            take: 3,
             skip: skip
         })
         res.status(200).json(products)
