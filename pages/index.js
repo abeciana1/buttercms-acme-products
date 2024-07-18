@@ -5,7 +5,6 @@ import ComponentRenderer from '@/components/ComponentRenderer'
 import HeroSection from '@/components/_page-sections/HeroSection'
 
 const Home = ({ seo, body }) => {
-    console.log(seo, body)
     const router = useRouter()
     console.log(router)
     return (
