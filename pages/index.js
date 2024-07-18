@@ -2,7 +2,7 @@ import { getPageData } from '@/lib/api'
 import { NextSeo } from 'next-seo'
 import { useRouter } from 'next/router'
 import ComponentRenderer from '@/components/ComponentRenderer'
-import HeroSection from '@/components/_page-sections/HeroSection'
+import { PageLayoutWrapper } from '@/components/_layouts'
 
 const Home = ({ seo, body }) => {
     const router = useRouter()
@@ -14,13 +14,15 @@ const Home = ({ seo, body }) => {
                 description={seo?.description}
                 // canonical="" blank for now
             />
-            {body?.map(({ type, fields: sectionData}, index) => {
-                return <ComponentRenderer
-                    key={type + index}
-                    type={type}
-                    sectionData={sectionData}
-                />
-            })}
+            <PageLayoutWrapper>
+                {body?.map(({ type, fields: sectionData}, index) => {
+                    return <ComponentRenderer
+                        key={type + index}
+                        type={type}
+                        sectionData={sectionData}
+                    />
+                })}
+            </PageLayoutWrapper>
         </>
     )
 }
