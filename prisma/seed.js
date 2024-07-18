@@ -41,6 +41,7 @@ const main = async () => {
     //             shippingPrice: parseFloat(product.shippingPrice.split('$')[1]),
     //             discount: parseFloat(product.discount),
     //             discountPrice: parseFloat(product.discountPrice.split('$')[1]),
+    //             mainImage: product.mainImage,
     //             category: {
     //                 connectOrCreate: {
     //                     where: {
@@ -55,7 +56,7 @@ const main = async () => {
     //         }
     //     })
     //     console.log('prod', prod)
-    // })
+    })
 }
 
 
