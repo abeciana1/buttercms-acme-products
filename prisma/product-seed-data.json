@@ -1,5 +1,5 @@
 [
-    {
+  {
       "sku": "AIA500",
       "name": "Anvil",
       "headline": "Defies all laws of physics!",
@@ -11,12 +11,13 @@
       "discount": 0.05,
       "discountPrice": "$23.74",
       "price": "$24.99",
-      "shippingPrice": "$245.00"
-    },
-    {
+      "shippingPrice": "$245.00",
+      "seoDesc": "Unleash the power of precision with ACME Anvils. Engineered for strength and durability, perfect for blacksmithing and industrial applications. Quality guaranteed by ACME."
+  },
+  {
       "sku": "AAR300",
       "name": "Artificial Rock",
-      "headline": "FOR THE ABOVE-AVERAGE PREDADTOR!",
+      "headline": "FOR THE ABOVE-AVERAGE PREDATOR!",
       "categoryId": 1,
       "parentProductId": "",
       "description": "We've done the hard work so all you have to do is hunt! Set this convincing, hollowed-out rock on the roadside and wait for your prey.\nExclusive ACME Magni-View© eye holes allow easy scanning of the horizon. Available in sedimentary, igneous, and metamorphic styles. Please specify desert, mountain, or urban design.",
@@ -25,9 +26,10 @@
       "discount": 0.3,
       "discountPrice": "$139.30",
       "price": "$199.00",
-      "shippingPrice": "$38.00"
-    },
-    {
+      "shippingPrice": "$38.00",
+      "seoDesc": "Transform any setting with ACME Artificial Rocks. Realistic, durable, and versatile for landscaping, decor, and training scenarios. ACME assures unmatched quality."
+  },
+  {
       "sku": "AA2200",
       "name": "Aspirin 1000 mg. (100 count)",
       "headline": "Anything strong would be lethal!",
@@ -39,9 +41,10 @@
       "discount": 0.1,
       "discountPrice": "$1.79",
       "price": "$1.99",
-      "shippingPrice": "$0.85"
-    },
-    {
+      "shippingPrice": "$0.85",
+      "seoDesc": "ACME Aspirin 1000 mg: Fast relief from headaches, muscle pain, and more. Trusted quality in a 100-count bottle. ACME: Your reliable partner in pain relief."
+  },
+  {
       "sku": "ABGIAB1",
       "name": "Automatic Boxing Glove",
       "headline": "",
@@ -53,9 +56,10 @@
       "discount": 0,
       "discountPrice": "$49.00",
       "price": "$49.00",
-      "shippingPrice": "$5.00"
-    },
-    {
+      "shippingPrice": "$5.00",
+      "seoDesc": "Stay prepared for any surprise with the ACME Automatic Boxing Glove. Perfect for practical jokes and self-defense. ACME's innovative design ensures fun and safety."
+  },
+  {
       "sku": "AB4200",
       "name": "Boomerang",
       "headline": "A guaranteed return on your investment",
@@ -67,9 +71,10 @@
       "discount": 0.1,
       "discountPrice": "$14.39",
       "price": "$15.99",
-      "shippingPrice": "$3.00"
-    },
-    {
+      "shippingPrice": "$3.00",
+      "seoDesc": "Experience endless fun with the ACME Boomerang. Precision-crafted for perfect returns every time. ACME quality guarantees hours of enjoyment and reliable performance."
+  },
+  {
       "sku": "ABC2204",
       "name": "Bungee Cord",
       "headline": "",
@@ -81,9 +86,10 @@
       "discount": 0.7,
       "discountPrice": "$9.89",
       "price": "$32.95",
-      "shippingPrice": "$7.00"
-    },
-    {
+      "shippingPrice": "$7.00",
+      "seoDesc": "Secure anything with the ACME Bungee Cord. High-strength, flexible, and durable for all your securing needs. ACME: Reliability in every stretch."
+  },
+  {
       "sku": "ABCFP2204",
       "name": "Bungee Cord Family Pack",
       "headline": "",
@@ -95,9 +101,10 @@
       "discount": 0,
       "discountPrice": "$69.95",
       "price": "$69.95",
-      "shippingPrice": "$12.00"
-    },
-    {
+      "shippingPrice": "$12.00",
+      "seoDesc": "Get more for less with the ACME Bungee Cord Family Pack. Versatile, durable, and perfect for multiple uses. ACME quality you can count on for every task."
+  },
+  {
       "sku": "ACC229",
       "name": "Car Catapult",
       "headline": "Lets our be your first catapult",
@@ -109,9 +116,10 @@
       "discount": 0,
       "discountPrice": "$699.00",
       "price": "$699.00",
-      "shippingPrice": "$250.00"
-    },
-    {
+      "shippingPrice": "$250.00",
+      "seoDesc": "Launch into action with the ACME Car Catapult. Ideal for stunts, pranks, and rapid escapes. ACME ensures thrilling precision and robust construction."
+  },
+  {
       "sku": "ACS705",
       "name": "Cube Sugar (144-pack)",
       "headline": "Yes, it's SUGAR!",
@@ -123,9 +131,10 @@
       "discount": 0,
       "discountPrice": "$2.99",
       "price": "$2.99",
-      "shippingPrice": "$1.00"
-    },
-    {
+      "shippingPrice": "$1.00",
+      "seoDesc": "Sweeten your life with ACME Cube Sugar. Perfectly portioned, pure sweetness in a 144-pack. ACME: Quality and consistency in every cube."
+  },
+  {
       "sku": "ADHDTV1",
       "name": "Dashboard HDTV",
       "headline": "Why miss Jeopardy just because there's traffic?",
@@ -137,23 +146,25 @@
       "discount": 0,
       "discountPrice": "$579.00",
       "price": "$579.00",
-      "shippingPrice": "$34.00"
-    },
-    {
+      "shippingPrice": "$34.00",
+      "seoDesc": "Upgrade your driving experience with the ACME Dashboard HDTV. Crystal-clear display and cutting-edge technology for entertainment on the go. ACME quality guaranteed."
+  },
+  {
       "sku": "ADRK10",
       "name": "Dental Records Keychain",
       "headline": "Practical and convenient!",
       "categoryId": 2,
       "parentProductId": "",
       "description": "Life is full of random mishaps. This real-life PVC casting of your upper plate attached to a key chain provides sure-fire identification in a worst-case scenario. Whether you were blasting around the back-bowls on runaway skis or canoodling on cliffs in the Painted Desert, everyone will know who you were with this convenient product.\nDoubles as a tension reliever and a tooth-grinder's bite plate. Not only that, but you can take a 300-yard golf-ball drive full in the face without a worry- your teeth are like your fingerprints, and they'll know who you are!",
-      "additionalDescription": "Please privde clear bite on piece of clay (soft) for molding. Do not sent photos of teeth or dental X-rays.\nAllow 6-8 weeks for delivery.",
+      "additionalDescription": "Please provide clear bite on piece of clay (soft) for molding. Do not send photos of teeth or dental X-rays.\nAllow 6-8 weeks for delivery.",
       "warning": "",
       "discount": 0,
       "discountPrice": "$39.99",
       "price": "$39.99",
-      "shippingPrice": "$2.50"
-    },
-    {
+      "shippingPrice": "$2.50",
+      "seoDesc": "Keep your dental records handy with the ACME Dental Records Keychain. Practical, secure, and easy to access. ACME ensures your peace of mind on the go."
+  },
+  {
       "sku": "ADP1500",
       "name": "Disintegrating Pistol",
       "headline": "Whoomp! There it was!",
@@ -165,23 +176,25 @@
       "discount": 0,
       "discountPrice": "$499.00",
       "price": "$499.00",
-      "shippingPrice": "$14.00"
-    },
-    {
+      "shippingPrice": "$14.00",
+      "seoDesc": "Add excitement to any occasion with the ACME Disintegrating Pistol. Safe, fun, and perfect for pranks. ACME: Innovating joy and laughter."
+  },
+  {
       "sku": "AECA500",
       "name": "Electric-Eye™ Car Alarm",
       "headline": "People will come running when they hear this one!",
       "categoryId": 3,
       "parentProductId": "",
-      "description": "Patented ACME Electric-Eye™ technology is THE first alert when anyone approaches your vehicle. Set one magnetic sensor on the hood, one on the rear bumper. Activate the alarm (mounts easily in large trunk or backseat), secure the door, and thieves beware! When the eye beam is broken, all hell breaks loose with 100 decibels of shrieks, sirens, sonic booms (watch those windows), and shouted obscenities. You've got to hear it to belive it. With an auditory range of 3 miles. Secure, no-bypass feature required that it be turned off by owner. We thought of everything so you don't have to. Installation required. We suggest having it done far away from neighbors by an authorized ACME installer or a trade-school trainee.",
+      "description": "Patented ACME Electric-Eye™ technology is THE first alert when anyone approaches your vehicle. Set one magnetic sensor on the hood, one on the rear bumper. Activate the alarm (mounts easily in large trunk or backseat), secure the door, and thieves beware! When the eye beam is broken, all hell breaks loose with 100 decibels of shrieks, sirens, sonic booms (watch those windows), and shouted obscenities. You've got to hear it to believe it. With an auditory range of 3 miles. Secure, no-bypass feature required that it be turned off by owner. We thought of everything so you don't have to. Installation required. We suggest having it done far away from neighbors by an authorized ACME installer or a trade-school trainee.",
       "additionalDescription": "",
       "warning": "",
       "discount": 0,
       "discountPrice": "$499.00",
       "price": "$499.00",
-      "shippingPrice": "$25.00"
-    },
-    {
+      "shippingPrice": "$25.00",
+      "seoDesc": "Protect your vehicle with the ACME Electric-Eye™ Car Alarm. Advanced technology and reliable security for your peace of mind. ACME: Trust in every beep."
+  },
+  {
       "sku": "ACWF20",
       "name": "Floss Regular (300') 8-pack",
       "headline": "Septo-steel ply makes ACME floss un-shred-able.",
@@ -193,9 +206,10 @@
       "discount": 0,
       "discountPrice": "$11.99",
       "price": "$11.99",
-      "shippingPrice": "$0.00"
-    },
-    {
+      "shippingPrice": "$0.00",
+      "seoDesc": "Keep your teeth clean and healthy with ACME Regular Floss. 300 feet of premium floss in an 8-pack. ACME: Quality oral care you can trust."
+  },
+  {
       "sku": "ACWF300",
       "name": "Floss Regular (300') 8-pack - Flavored - Bourbon",
       "headline": "Septo-steel ply makes ACME floss un-shred-able.",
@@ -207,9 +221,10 @@
       "discount": 0,
       "discountPrice": "$15.99",
       "price": "$15.99",
-      "shippingPrice": "$1.50"
-    },
-    {
+      "shippingPrice": "$1.50",
+      "seoDesc": "Enjoy a unique flossing experience with ACME Bourbon-Flavored Floss. 300 feet of premium floss in an 8-pack. ACME: Flavor meets quality in oral care."
+  },
+  {
       "sku": "ACWF300",
       "name": "Floss Regular (300') 8-pack - Flavored - Mint",
       "headline": "Septo-steel ply makes ACME floss un-shred-able.",
@@ -221,9 +236,10 @@
       "discount": 0,
       "discountPrice": "$15.99",
       "price": "$15.99",
-      "shippingPrice": "$1.50"
-    },
-    {
+      "shippingPrice": "$1.50",
+      "seoDesc": "Refresh your mouth with ACME Mint-Flavored Floss. 300 feet of premium floss in an 8-pack. ACME: Quality oral care with a minty twist."
+  },
+  {
       "sku": "ACWF300",
       "name": "Floss Regular (300') 8-pack - Flavored - Parmesan",
       "headline": "Septo-steel ply makes ACME floss un-shred-able.",
@@ -235,9 +251,10 @@
       "discount": 0.55,
       "discountPrice": "$7.20",
       "price": "$15.99",
-      "shippingPrice": "$1.50"
-    },
-    {
+      "shippingPrice": "$1.50",
+      "seoDesc": "Add a savory touch to your routine with ACME Parmesan-Flavored Floss. 300 feet of premium floss in an 8-pack. ACME: Unique flavor meets quality."
+  },
+  {
       "sku": "ACWF300",
       "name": "Floss Regular (300') 8-pack - Flavored - Pot Roast",
       "headline": "Septo-steel ply makes ACME floss un-shred-able.",
@@ -249,9 +266,10 @@
       "discount": 0.15,
       "discountPrice": "$13.59",
       "price": "$15.99",
-      "shippingPrice": "$1.50"
-    },
-    {
+      "shippingPrice": "$1.50",
+      "seoDesc": "Delight in the savory taste of ACME Pot Roast-Flavored Floss. 300 feet of premium floss in an 8-pack. ACME: Quality oral care with a hearty flavor."
+  },
+  {
       "sku": "ACWF204",
       "name": "Four-pack Floss Carabiners",
       "headline": "Septo-steel ply makes ACME floss un-shred-able.",
@@ -263,9 +281,10 @@
       "discount": 0.05,
       "discountPrice": "$28.49",
       "price": "$29.99",
-      "shippingPrice": "$3.00"
-    },
-    {
+      "shippingPrice": "$3.00",
+      "seoDesc": "Stay floss-ready with ACME Floss Carabiners. Convenient, durable, and portable. ACME ensures oral care on the go with this 4-pack."
+  },
+  {
       "sku": "AFDLH1",
       "name": "Handlebars",
       "headline": "",
@@ -277,9 +296,10 @@
       "discount": 0.15,
       "discountPrice": "$16.99",
       "price": "$19.99",
-      "shippingPrice": "$4.00"
-    },
-    {
+      "shippingPrice": "$4.00",
+      "seoDesc": "Ride in style and control with ACME Handlebars. Ergonomically designed for comfort and performance. ACME: Quality engineering for your ride."
+  },
+  {
       "sku": "AFDLH900",
       "name": "Handlebars Mounting Kit",
       "headline": "",
@@ -291,9 +311,10 @@
       "discount": 0.5,
       "discountPrice": "$3.50",
       "price": "$6.99",
-      "shippingPrice": "$2.50"
-    },
-    {
+      "shippingPrice": "$2.50",
+      "seoDesc": "Easily install your handlebars with the ACME Mounting Kit. Complete, durable, and easy to use. ACME: Ensuring a perfect fit every time."
+  },
+  {
       "sku": "ARG9000",
       "name": "Hot Rivet Gun",
       "headline": "Is it hot yet?",
@@ -305,9 +326,10 @@
       "discount": 0.2,
       "discountPrice": "$79.20",
       "price": "$99.00",
-      "shippingPrice": "$8.00"
-    },
-    {
+      "shippingPrice": "$8.00",
+      "seoDesc": "Tackle tough jobs with the ACME Hot Rivet Gun. Powerful, precise, and built to last. ACME: Industrial strength for your toughest projects."
+  },
+  {
       "sku": "AHTK6081",
       "name": "Hydraulic Tooth Kit",
       "headline": "Urban renewal for your gums",
@@ -315,13 +337,14 @@
       "parentProductId": "",
       "description": "Forget those minty pieces of tape, those clumsy bleaching trays, or the trips to the dental equivalent of a tanning booth. This versatile kit, approved by the American Anti-Plaque Association (say \"AAPA\"), easily removes hardened scales from even the most stubborn and previously unreachable tooth surfaces.\nErgonomic handle. Amazing 40 percent enamel retention.\nMotorized rotary file attachment.",
       "additionalDescription": "",
-      "warning": "A regular profram of daily care and regular trips to an oral surgeon will enhance the results of this product.",
+      "warning": "A regular program of daily care and regular trips to an oral surgeon will enhance the results of this product.",
       "discount": 0.5,
       "discountPrice": "$187.50",
       "price": "$375.00",
-      "shippingPrice": "$23.00"
-    },
-    {
+      "shippingPrice": "$23.00",
+      "seoDesc": "Experience high-tech dental care with the ACME Hydraulic Tooth Kit. Advanced, precise, and reliable. ACME: Innovating your oral health."
+  },
+  {
       "sku": "AIP4300",
       "name": "Integrating Pistol",
       "headline": "Everybody deserves a second chance!",
@@ -333,9 +356,10 @@
       "discount": 0.4,
       "discountPrice": "$539.40",
       "price": "$899.00",
-      "shippingPrice": "$14.00"
-    },
-    {
+      "shippingPrice": "$14.00",
+      "seoDesc": "Combine fun and functionality with the ACME Integrating Pistol. Perfect for gadgets and gizmos. ACME: Engineering creativity and quality."
+  },
+  {
       "sku": "AIC22",
       "name": "Iron Carrot",
       "headline": "THE PERFECT GIFT AT THE PERFECT PRICE!",
@@ -347,9 +371,10 @@
       "discount": 0.3,
       "discountPrice": "$27.29",
       "price": "$38.99",
-      "shippingPrice": "$8.50"
-    },
-    {
+      "shippingPrice": "$8.50",
+      "seoDesc": "Add a touch of whimsy with the ACME Iron Carrot. Unique, durable, and fun for decor or pranks. ACME: Crafting humor with quality."
+  },
+  {
       "sku": "ALV20",
       "name": "Leg Muscle Vitamins (500mg) (30-day supply)",
       "headline": "Put your vitamins where you need them!",
@@ -361,9 +386,10 @@
       "discount": 0.2,
       "discountPrice": "$15.99",
       "price": "$19.99",
-      "shippingPrice": "$1.50"
-    },
-    {
+      "shippingPrice": "$1.50",
+      "seoDesc": "Strengthen your legs with ACME Leg Muscle Vitamins. 500mg per serving, 30-day supply. ACME: Supporting your muscle health and strength."
+  },
+  {
       "sku": "AMR2200",
       "name": "Mini-Rocket",
       "headline": "This is the future of Transportation",
@@ -375,9 +401,10 @@
       "discount": 0.4,
       "discountPrice": "$59.97",
       "price": "$99.95",
-      "shippingPrice": "$20.00"
-    },
-    {
+      "shippingPrice": "$20.00",
+      "seoDesc": "Launch into fun with the ACME Mini-Rocket. Compact, powerful, and perfect for hobbies and pranks. ACME: Innovating excitement and joy."
+  },
+  {
       "sku": "ANV227",
       "name": "Nitro Vitamins (60 count)",
       "headline": "Take the work out of your workout!",
@@ -389,9 +416,10 @@
       "discount": 0.15,
       "discountPrice": "$25.46",
       "price": "$29.95",
-      "shippingPrice": "$3.00"
-    },
-    {
+      "shippingPrice": "$3.00",
+      "seoDesc": "Boost your energy with ACME Nitro Vitamins. 60-count bottle of high-potency supplements. ACME: Energizing your day with quality."
+  },
+  {
       "sku": "AE1094X",
       "name": "Pasta Maker/Extruder",
       "headline": "Turn anything into pasta!",
@@ -403,9 +431,10 @@
       "discount": 0.65,
       "discountPrice": "$52.48",
       "price": "$149.95",
-      "shippingPrice": "$11.95"
-    },
-    {
+      "shippingPrice": "$11.95",
+      "seoDesc": "Create delicious homemade pasta with the ACME Pasta Maker/Extruder. Easy to use, durable, and versatile. ACME: Bringing culinary creativity to your kitchen."
+  },
+  {
       "sku": "AP50",
       "name": "Pills",
       "headline": "Safety is our middle name!",
@@ -417,9 +446,10 @@
       "discount": 0.1,
       "discountPrice": "$3.59",
       "price": "$3.99",
-      "shippingPrice": "$0.85"
-    },
-    {
+      "shippingPrice": "$0.85",
+      "seoDesc": "Find relief with ACME Pills. Effective, reliable, and trusted for various ailments. ACME: Your partner in health and wellness."
+  },
+  {
       "sku": "ATNTP12",
       "name": "TNT Plunger",
       "headline": "Take the plunge!",
@@ -431,9 +461,10 @@
       "discount": 0.2,
       "discountPrice": "$12.76",
       "price": "$15.95",
-      "shippingPrice": "$4.50"
-    },
-    {
+      "shippingPrice": "$4.50",
+      "seoDesc": "Add a bang to your projects with the ACME TNT Plunger. Safe, exciting, and perfect for stunts. ACME: Engineering thrills with safety."
+  },
+  {
       "sku": "AT902",
       "name": "Toaster (2-slice)",
       "headline": "It's Toast",
@@ -445,9 +476,10 @@
       "discount": 0.25,
       "discountPrice": "$37.49",
       "price": "$49.99",
-      "shippingPrice": "$4.50"
-    },
-    {
+      "shippingPrice": "$4.50",
+      "seoDesc": "Enjoy perfect toast every time with the ACME 2-Slice Toaster. Efficient, reliable, and stylish. ACME: Quality appliances for your kitchen."
+  },
+  {
       "sku": "AT924",
       "name": "Toaster (24-slice)",
       "headline": "It's Toast",
@@ -459,9 +491,10 @@
       "discount": 0,
       "discountPrice": "$159.99",
       "price": "$159.99",
-      "shippingPrice": "$8.50"
-    },
-    {
+      "shippingPrice": "$8.50",
+      "seoDesc": "Maximize your toasting with the ACME 24-Slice Toaster. Ideal for large gatherings and quick breakfasts. ACME: Combining capacity and quality."
+  },
+  {
       "sku": "AT904",
       "name": "Toaster (4-slice)",
       "headline": "It's Toast",
@@ -473,9 +506,10 @@
       "discount": 0,
       "discountPrice": "$69.99",
       "price": "$69.99",
-      "shippingPrice": "$5.50"
-    },
-    {
+      "shippingPrice": "$5.50",
+      "seoDesc": "Make mornings easier with the ACME 4-Slice Toaster. Quick, efficient, and reliable. ACME: Quality you can trust for every breakfast."
+  },
+  {
       "sku": "AU66",
       "name": "Unicycle",
       "headline": "It's not just for trained bears anymore",
@@ -487,6 +521,7 @@
       "discount": 0,
       "discountPrice": "$199.99",
       "price": "$199.99",
-      "shippingPrice": "$15.50"
-    }
-  ]
+      "shippingPrice": "$15.50",
+      "seoDesc": "Master balance and fun with the ACME Unicycle. Sturdy, smooth, and perfect for performers and hobbyists. ACME: Quality engineering for every ride."
+  }
+]
