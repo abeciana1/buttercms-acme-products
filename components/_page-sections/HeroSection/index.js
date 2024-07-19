@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { LinkLookLikeButton } from '@/components/_inputs/Links'
+import useResponsiveness from '@/lib/hooks/useResponsiveness'
 
 const HeroSection = ({
     headline,
@@ -12,10 +13,22 @@ const HeroSection = ({
     ctaHref,
     buttonColor
 }) => {
+    const { isDesktop, isTablet, isMobile } = useResponsiveness() || {}
     return (
-        <section className='flex items-center gap-10 justify-center'>
-            <div className='w-1/2'>
+        <section className='flex flex-col md:flex-row items-center gap-10 justify-center'>
+            <div className='w-full md:w-1/2'>
                 <h1>{headline}</h1>
+                {(isMobile || isTablet) &&
+                    <div className='py-5'>
+                        <Image
+                            src={image}
+                            alt={imageAltText}
+                            width={imageWidth}
+                            height={imageHeight}
+                            className='mx-auto'
+                        />
+                    </div>
+                }
                 <div className='text-xl'>{bodyText}</div>
                 <div className='pt-5'>
                     <LinkLookLikeButton
@@ -25,14 +38,16 @@ const HeroSection = ({
                     />
                 </div>
             </div>
-            <div>
-                <Image
-                    src={image}
-                    alt={imageAltText}
-                    width={imageWidth}
-                    height={imageHeight}
-                />
-            </div>
+            {isDesktop &&
+                <div>
+                    <Image
+                        src={image}
+                        alt={imageAltText}
+                        width={imageWidth}
+                        height={imageHeight}
+                    />
+                </div>
+            }
         </section>
     )
 }
