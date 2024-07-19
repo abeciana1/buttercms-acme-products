@@ -3,6 +3,7 @@ import axios from 'axios'
 import Preloader from '@/components/Preloader'
 import { Carousel } from 'react-responsive-carousel';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import ProductCard from '@/components/_products/ProductCard'
 
 const getSlidePercentage = () => {
     if (window.innerWidth >= 1024) {
@@ -66,6 +67,9 @@ const ProductCarousel = ({
                 centerSlidePercentage={getSlidePercentage()}
                 >
                     {products.length < 1 && <Preloader />}
+                    {products.length > 0 &&
+                        products.map((product, index) => <ProductCard key={product.sku + index} product={product} /> )
+                    }
                 </Carousel>
             </section>
         </section>
