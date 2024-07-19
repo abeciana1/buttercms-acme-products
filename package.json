@@ -19,6 +19,7 @@
     "camelcase-keys": "^8.0.2",
     "classnames": "^2.5.1",
     "date-fns": "^2.29.3",
+    "dotenv": "^16.4.5",
     "hamburger-react": "^2.5.1",
     "next": "^13.1.5",
     "next-seo": "^6.5.0",
