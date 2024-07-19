@@ -58,6 +58,7 @@ model Product {
   favoriteProducts      FavoriteProduct[]
   cartItems             CartItem[]
   mainImage             String
+  seoDesc               String
 }
 
 model Category {

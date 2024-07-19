@@ -42,6 +42,7 @@ const main = async () => {
     //             discount: parseFloat(product.discount),
     //             discountPrice: parseFloat(product.discountPrice.split('$')[1]),
     //             mainImage: product.mainImage,
+    //             seoDesc: product.seoDesc,
     //             category: {
     //                 connectOrCreate: {
     //                     where: {
