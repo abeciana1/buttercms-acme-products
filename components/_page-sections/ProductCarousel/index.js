@@ -40,7 +40,7 @@ const ProductCarousel = ({
         <section className="">
             <div className='sr-only'>{carouselTitle}</div>
             <div
-                className='font-optiscript text-3xl'
+                className='font-optiscript text-4xl'
             >{carouselTitle}</div>
             <section className='relative'>
                 <Carousel
