@@ -16,8 +16,8 @@ const HeroSection = ({
     const { isDesktop, isTablet, isMobile } = useResponsiveness() || {}
     return (
         <section className='flex flex-col md:flex-row items-center gap-10 justify-center'>
-            <div className='w-full md:w-1/2'>
-                <h1>{headline}</h1>
+            <div className='w-full lg:w-1/2'>
+                <h1 className='text-center md:text-left'>{headline}</h1>
                 {(isMobile || isTablet) &&
                     <div className='py-5'>
                         <Image
