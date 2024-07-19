@@ -11,8 +11,6 @@ const Header = ({ mainMenu }) => {
     const [expanded, setExpanded] = useState(false)
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     const { isMobile, isTablet, isDesktop } = useResponsiveness() || {}
-
-    // console.log(mainMenu);
     
     const toggleExpand = () => {
         if (isDesktop) {
@@ -57,7 +55,10 @@ const Header = ({ mainMenu }) => {
                     >
                         {mainMenu?.menu_items_first?.map((menuItem) => {
                             return (
-                                <li key={menuItem.meta.id} className={cx('w-full', {
+                                <li
+                                    onMouseEnter={toggleCollapse}
+                                    key={menuItem.meta.id}
+                                    className={cx('w-full', {
                                     ['text-xl']: isDesktop,
                                     ['text-2xl']: isMobile || isTablet
                                 })}>
@@ -76,11 +77,11 @@ const Header = ({ mainMenu }) => {
                                     ['text-2xl']: isMobile || isTablet
                                 })}
                                 onMouseEnter={toggleExpand}
-                                onMouseLeave={toggleCollapse}
                             >
                                 <div>Categories</div>
                                 {(expanded || isMobile || isTablet) &&
                                     <ul
+                                        onMouseLeave={toggleCollapse}
                                         className={cx('', {
                                             ['absolute bg-white shadow-md p-4 w-60 rounded-md mt-2']: expanded
                                         })}
