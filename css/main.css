@@ -44,7 +44,7 @@ body {
 
 h1 {
   @apply text-5xl;
-  @apply leading-loose;
+  @apply leading-tight;
 }
 
 /*===== All Preloader Style =====*/
