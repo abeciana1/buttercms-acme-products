@@ -2,7 +2,6 @@ const seedData = require('./product-seed-data.json')
 const { PrismaClient } = require('@prisma/client')
 const prisma = new PrismaClient()
 
-
 const main = async () => {
     // console.log('creating prod categories');
     // const gadgetCat = await prisma.category.create({
@@ -17,6 +16,21 @@ const main = async () => {
     // const homeCat = await prisma.category.create({
     //     data: { name: "Home Goods", slug: "home-goods" }
     // })
+
+    // const lookupCats = {
+    //     "1": {
+    //         id: gadgetCat.id,
+    //     },
+    //     "2": {
+    //         id: healthCat.id,
+    //     },
+    //     "3": {
+    //         id: transportationCat.id,
+    //     },
+    //     "4": {
+    //         id: homeCat.id,
+    //     }
+    // }
 
     // console.log('creating mock user')
     // const mockUser = await prisma.user.create({
@@ -46,7 +60,7 @@ const main = async () => {
     //             category: {
     //                 connectOrCreate: {
     //                     where: {
-    //                         id: product.categoryId
+    //                         id: lookupCats[product.categoryId],
     //                     },
     //                     create: {
     //                         name: 'unknown_category',
