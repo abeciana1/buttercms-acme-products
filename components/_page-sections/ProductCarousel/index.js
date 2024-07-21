@@ -10,11 +10,8 @@ const ProductCarousel = ({
     const [ products, setProducts ] = useState([])
     const [ isLoading, setIsLoading ] = useState(false)
     const [ slidesPerPage, setSlidesPerPage ] = useState(getSlidesPerPage())
-    // const [ currentPage, setCurrentPage ] = useState(0)
     const [ startIdx , setStartIdx ] = useState(0)
     const [ endIdx, setEndIdx ] = useState(slidesPerPage)
-
-    console.log({ startIdx, endIdx });
 
     function getSlidesPerPage() {
         if (typeof window !== 'undefined') {
