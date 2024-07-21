@@ -12,9 +12,9 @@ const ProductCard = ({ product }) => {
                     objectFit="contain"
                 />
             </div>
-            <div >
-                <div className="text-lg font-bold text-gray-900">{product.name}</div>
-                <div className="text-gray-600 text-sm">{product.price}</div>
+            <div className='space-y-1'>
+                <div className="text-lg font-bold text-black">{product.name}</div>
+                <div className="text-gray-600 text-lg font-medium">${product.price.toFixed(2)}</div>
                 <ATCButton product={product} />
             </div>
         </div>
