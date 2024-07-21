@@ -12,7 +12,7 @@ module.exports = {
         utilityGreen: '#9abeaa',
         yellow: '#F4DA40',
         skyBlue: '#A3C7D2',
-        orange: '#ED8B00',
+        altOrange: '#ED8B00',
         altRed: '#E03C31',
         brown: '#603D20',
         black: '#101820',
