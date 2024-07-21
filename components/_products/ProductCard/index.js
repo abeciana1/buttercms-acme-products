@@ -1,21 +1,21 @@
 import Image from 'next/image'
+import ATCButton from '@/components/_inputs/Buttons/ATCButton'
 
 const ProductCard = ({ product }) => {
     return (
-        <div className='max-w-sm rounded overflow-hidden shadow-lg'>
-            <div className='relative h-48'>
+        <div className="bg-white flex items-center gap-5 p-5 rounded-lg shadow-md max-w-96">
+            <div className="relative h-20 w-20 md:h-32 md:w-32">
                 <Image
                     src={product.mainImage}
-                    alt={product.sku + " - " + product.name}
-                    layout="fill"
+                    alt={product.name}
+                    fill
                     objectFit="contain"
-                    className="bg-white"
                 />
             </div>
-            <div className="px-6 py-4">
-                <div className="font-bold text-xl mb-2">{product.name}</div>
-                <p className="text-gray-700 text-base">{product.description}</p>
-                <p className="text-gray-900 font-bold text-lg mt-2">${product.price.toFixed(2)}</p>
+            <div >
+                <div className="text-lg font-bold text-gray-900">{product.name}</div>
+                <div className="text-gray-600 text-sm">{product.price}</div>
+                <ATCButton product={product} />
             </div>
         </div>
     )
