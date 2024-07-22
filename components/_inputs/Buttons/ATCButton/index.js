@@ -11,8 +11,9 @@ const ATCButton = ({
     return (
         <button
             onClick={atcClickHandler}
-            className={cx('w-full', {
-                ['text-white text-lg bg-altRed rounded-md py-1 w-32']: color === 'Red', 
+            className={cx('w-full min-w-44 text-lg rounded-md py-1', {
+                ['text-white bg-altRed ']: color === 'Red',
+                ['text-white bg-altOrange']: color === 'Orange',
             })}
         >
             Add to cart
