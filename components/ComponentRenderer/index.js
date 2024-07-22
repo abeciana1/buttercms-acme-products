@@ -5,6 +5,7 @@ import camelcaseKeys from 'camelcase-keys';
 
 
 export default function ComponentRenderer({ type, sectionData }) {
+	console.log(type, sectionData)
 	const sectionsComponentPaths = () => ({
 		[type]: dynamic(
 			() => import(`@/components/_page-sections/${toPascalCase(type)}`)
