@@ -5,8 +5,8 @@ import ComponentRenderer from '@/components/ComponentRenderer'
 import { PageLayoutWrapper } from '@/components/_layouts'
 
 const Home = ({ seo, body }) => {
-    const router = useRouter()
-    console.log(router)
+    // const router = useRouter()
+    // console.log(router)
     return (
         <>
             <NextSeo
