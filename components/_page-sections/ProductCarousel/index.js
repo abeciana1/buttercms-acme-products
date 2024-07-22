@@ -5,7 +5,8 @@ import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import ProductCard from '@/components/_products/ProductCard'
 
 const ProductCarousel = ({
-    carouselTitle
+    carouselTitle,
+    dataEndpoint
 }) => {
     const [ products, setProducts ] = useState([])
     const [ isLoading, setIsLoading ] = useState(false)
@@ -34,9 +35,8 @@ const ProductCarousel = ({
         const fetchProductData = async () => {
             setIsLoading(true)
             try{
-                const { data: response } = await axios.get('/api/get-random-products')
+                const { data: response } = await axios.get('/api/' + dataEndpoint)
                 setProducts(response)
-                console.log('Response:', response)
             } catch (error) {
                 console.error('Error fetching products:', error)
             }
