@@ -86,11 +86,11 @@ const ProductCarousel = ({
     }
 
     return (
-    <section className='relative'>
+    <section className='relative pt-10 md:pt-20'>
         <div className='sr-only'>{carouselTitle}</div>
-        <div
-            className='font-optiscript text-4xl'
-        >{carouselTitle}</div>
+        <h2
+            className='font-optiscript'
+        >{carouselTitle}</h2>
         <div className='pt-5 flex gap-10'>
             <button onClick={prevSlide} className="z-10 bg-gray-700 text-white p-2 rounded-full">
                 <FaArrowLeft size={30} />

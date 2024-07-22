@@ -11,7 +11,7 @@ const ATCButton = ({
     return (
         <button
             onClick={atcClickHandler}
-            className={cx('w-full min-w-44 text-lg rounded-md py-1', {
+            className={cx('w-full h-10 min-w-32 sm:min-w-44 text-lg rounded-md py-1', {
                 ['text-white bg-altRed ']: color === 'Red',
                 ['text-white bg-altOrange']: color === 'Orange',
             })}
