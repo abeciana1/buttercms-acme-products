@@ -22,3 +22,24 @@ export const LinkLookLikeButton = ({
         </Link>
     )
 }
+
+export const LinkLookLikeButtonOutline = ({
+    linkText,
+    linkHref,
+    color
+}) => {
+    return (
+        <Link
+            title={linkText}
+            href={linkHref}
+            className={cx('w-full min-w-44 text-nowrap font-bold py-2 px-4 rounded-md border-2 text-lg', {
+                ['border-utilityGreen text-utilityGreen']: color === 'Green',
+                ['border-altRed text-altRed']: color === 'Red',
+                ['border-altOrange text-altOrange']: color === 'Orange',
+                ['border-skyBlue text-skyBlue']: color === 'SkyBlue',
+            })}
+        >
+            {linkText}
+        </Link>
+    )
+}
