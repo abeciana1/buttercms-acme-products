@@ -26,7 +26,7 @@ const Breadcrumb = ({
         <li className="text-sm">
             {href ?
                 <Link href={href} title={text} className="ml-2">
-                    {text} /
+                    {text}{" / "}
                 </Link>
                 :
                 <div className="ml-2 font-bold">{text}</div>
