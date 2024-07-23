@@ -1,12 +1,9 @@
 import { getPageData } from '@/lib/api'
 import { NextSeo } from 'next-seo'
-import { useRouter } from 'next/router'
 import ComponentRenderer from '@/components/ComponentRenderer'
 import { PageLayoutWrapper } from '@/components/_layouts'
 
 const Home = ({ seo, body }) => {
-    // const router = useRouter()
-    // console.log(router)
     return (
         <>
             <NextSeo
