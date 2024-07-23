@@ -18,6 +18,7 @@
     "buttercms": "^1.2.15",
     "camelcase-keys": "^8.0.2",
     "classnames": "^2.5.1",
+    "cookie": "^0.6.0",
     "cors": "^2.8.5",
     "date-fns": "^2.29.3",
     "dotenv": "^16.4.5",
