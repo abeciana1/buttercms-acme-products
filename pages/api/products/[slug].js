@@ -7,6 +7,7 @@ const handler = async (req, res) => {
                 sku: req.query.slug,
             },
             select: {
+                sku:true,
                 name: true,
                 price: true,
                 discount: true,
