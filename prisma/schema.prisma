@@ -69,13 +69,15 @@ model Category {
 }
 
 model Cart {
-  id        Int        @id @default(autoincrement())
-  sessionId String     @unique
-  userId    Int?       @unique
-  user      User?      @relation(fields: [userId], references: [id])
-  cartItems CartItem[]
-  createdAt DateTime   @default(now())
-  updatedAt DateTime   @updatedAt
+  id            Int        @id @default(autoincrement())
+  sessionId     String     @unique
+  userId        Int?       @unique
+  user          User?      @relation(fields: [userId], references: [id])
+  cartItems     CartItem[]
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+  subTotal      Float
+  shippingTotal Float
 }
 
 model CartItem {
