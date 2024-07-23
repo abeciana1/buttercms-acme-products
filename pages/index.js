@@ -28,7 +28,7 @@ const Home = ({ seo, body }) => {
 }
 
 export const getStaticProps = async () => {
-    let { seo, body } = await getPageData('homepage')
+    let { seo, body } = await getPageData('page','homepage')
     return {
         props: {
             seo,
