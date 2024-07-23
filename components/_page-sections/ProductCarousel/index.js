@@ -14,7 +14,7 @@ const ProductCarousel = ({
     const [ startIdx , setStartIdx ] = useState(0)
     const [ endIdx, setEndIdx ] = useState(slidesPerPage)
 
-    function getSlidesPerPage() {
+    const getSlidesPerPage = () => {
         if (typeof window !== 'undefined') {
             if (window.innerWidth >= 1050) {
                 return 3; // 3 slides per page on larger screens
@@ -62,7 +62,7 @@ const ProductCarousel = ({
         }
     }, [])
 
-    function nextSlide() {
+    const nextSlide = () => {
         setStartIdx((prevStartIdx) => {
             const newStartIdx = prevStartIdx + slidesPerPage;
             return newStartIdx >= products.length ? 0 : newStartIdx;
@@ -73,12 +73,11 @@ const ProductCarousel = ({
         });
     }
 
-        function prevSlide() {
+    const prevSlide = () => {
         setStartIdx((prevStartIdx) => {
             const newStartIdx = prevStartIdx - slidesPerPage;
             return newStartIdx < 0 ? Math.max(0, products.length - slidesPerPage) : newStartIdx;
         });
-
         setEndIdx((prevEndIdx) => {
             const newEndIdx = prevEndIdx - slidesPerPage;
             return newEndIdx < slidesPerPage ? products.length : newEndIdx;
