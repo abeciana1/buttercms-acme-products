@@ -1,7 +1,7 @@
 import App from "next/app"
 import { getMainMenu } from "@/lib/api"
 import { Provider } from'react-redux'
-import store from '@/lib/store'
+import store from '@/redux/store'
 
 import '@/css/main.css'
 
