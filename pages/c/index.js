@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { PageLayoutWrapper } from '@/components/_layouts'
 import { getPageData }  from '@/lib/api'
 import axios from 'axios'
