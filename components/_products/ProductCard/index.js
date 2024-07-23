@@ -38,7 +38,7 @@ const ProductCard = ({ product }) => {
                             <div className='text-lg sm:text-3xl text-altOrange font-bold'>${product.discountPrice.toFixed(2)}</div>
                         }
                     </div>
-                    <ATCButton product={product} />
+                    <ATCButton productSku={product?.sku} productName={product?.name} />
                 </div>
             </div>
         </div>
