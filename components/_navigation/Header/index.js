@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import useResponsiveness from '@/lib/hooks/useResponsiveness'
 import Hamburger from 'hamburger-react'
 import cx from 'classnames'
@@ -6,11 +6,50 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FaCircleUser } from "react-icons/fa6";
 import Cart from '@/components/_navigation/Cart'
+import Cookies from 'js-cookie'
+import axios from 'axios'
 
 const Header = ({ mainMenu }) => {
+    const isEffectRun = useRef(false);
     const [expanded, setExpanded] = useState(false)
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     const { isMobile, isTablet, isDesktop } = useResponsiveness() || {}
+
+    
+    useEffect(() => {
+        if (isEffectRun.current) return;
+        isEffectRun.current = true;
+
+        const cartCookie = Cookies.get('ACMEcart')
+
+        const getOrCreateCart = async (sessionId) => {
+            try {
+                const { data: response } = await axios.post('/api/cart/getOrCreateCart', {}, {
+                    headers: {
+                        'x-session-id': sessionId,
+                    }
+                })
+            } catch (error) {
+                console.error('Error creating cart:', error)
+            }
+        }
+
+        const setCartCookieAndCreateCart = async () => {
+            try {
+                const { data: response} = await axios.get('/api/cart/setCartCookie')
+                await getOrCreateCart(response.sessionId)
+            } catch (error) {
+                console.error('Error setting cart cookie:', error)
+            }
+        }
+        
+        if (!cartCookie) {
+            setCartCookieAndCreateCart()
+        } else {
+            const sessionObj = JSON.parse(cartCookie);
+            getOrCreateCart(sessionObj.sessionId);
+        }
+    }, [])
     
     const toggleExpand = () => {
         if (isDesktop) {
