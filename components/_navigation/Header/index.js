@@ -87,7 +87,7 @@ const Header = ({ mainMenu }) => {
                                         <ul
                                             onMouseLeave={toggleCollapse}
                                             className={cx('', {
-                                                ['absolute bg-white shadow-md p-4 w-60 rounded-md mt-2']: expanded
+                                                ['absolute bg-white shadow-md p-4 w-60 rounded-md mt-2 z-50']: expanded
                                             })}
                                         >
                                             {mainMenu?.menu_items_dd?.map((menuItem) => {
