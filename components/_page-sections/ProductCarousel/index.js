@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import axios from 'axios'
 import Preloader from '@/components/Preloader'
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
@@ -48,7 +48,7 @@ const ProductCarousel = ({
         fetchProductData()
     }, [])
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         const adjustSlidesPerPage = () => {
             setSlidesPerPage(getSlidesPerPage());
         }
