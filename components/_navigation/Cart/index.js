@@ -1,20 +1,20 @@
 import Link from 'next/link'
 import { FaCartShopping } from "react-icons/fa6";
+import { useAppSelector } from '@/redux/hooks'
 
 const Cart = ({
-    size,
-    cartItems = 0,
-    cartTotal = 0
+    size
 }) => {
+    const cartItemsCount = useAppSelector((state) => state.cart.cartItemsCount)
     return(
         <div className='relative'>
             <Link title='Cart page' href='/cart'>
                 <FaCartShopping size={size} />
             </Link>
-            {cartItems > 0 &&
+            {cartItemsCount > 0 &&
                 <div
                     className='absolute -top-2 -right-2 bg-altRed text-white text-md rounded-full leading-none py-0.5 px-1'
-                >{cartItems}</div>
+                >{cartItemsCount}</div>
             }
         </div>
     )
