@@ -25,13 +25,11 @@ const ProductCarousel = ({
     const [ isLoading, setIsLoading ] = useState(false)
     const [ slidesPerPage, setSlidesPerPage ] = useState(getSlidesPerPage())
     const [ startIdx , setStartIdx ] = useState(0)
-    const [ endIdx, setEndIdx ] = useState(slidesPerPage)
 
 
     useEffect(() => {
         setSlidesPerPage(getSlidesPerPage());
         setStartIdx(0);
-        setEndIdx(getSlidesPerPage());
     }, [])
 
     useEffect(() => {
@@ -65,23 +63,15 @@ const ProductCarousel = ({
 
     const nextSlide = () => {
         setStartIdx((prevStartIdx) => {
-            const newStartIdx = prevStartIdx + slidesPerPage;
+            const newStartIdx = prevStartIdx + 1;
             return newStartIdx >= products.length ? 0 : newStartIdx;
-        });
-        setEndIdx((prevEndIdx) => {
-            const newEndIdx = prevEndIdx + slidesPerPage;
-            return newEndIdx > products.length ? slidesPerPage : newEndIdx;
         });
     }
 
     const prevSlide = () => {
         setStartIdx((prevStartIdx) => {
-            const newStartIdx = prevStartIdx - slidesPerPage;
-            return newStartIdx < 0 ? Math.max(0, products.length - slidesPerPage) : newStartIdx;
-        });
-        setEndIdx((prevEndIdx) => {
-            const newEndIdx = prevEndIdx - slidesPerPage;
-            return newEndIdx < slidesPerPage ? products.length : newEndIdx;
+            const newStartIdx = prevStartIdx - 1;
+            return newStartIdx < 0 ? products.length - 1 : newStartIdx;
         });
     }
 
@@ -103,10 +93,10 @@ const ProductCarousel = ({
             {isLoading && <Preloader />}
             {(!isLoading && products.length > 0) &&
                 <section className='flex gap-5 justify-center'>
-                    {products.slice(startIdx, endIdx).map((product, index) => {
-                    return (
-                        <ProductCard key={product.sku + index} product={product} />
-                    )})}
+                    {Array(slidesPerPage).fill().map((_, i) => {
+                        const productIdx = (startIdx + i) % products.length;
+                        return <ProductCard key={products[productIdx].sku + productIdx} product={products[productIdx]} />;
+                    })}
                 </section>
             }
         </section>
