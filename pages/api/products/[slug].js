@@ -13,7 +13,8 @@ const handler = async (req, res) => {
                 discount: true,
                 discountPrice: true,
                 headline: true,
-                mainImage: true
+                mainImage: true,
+                shippingPrice: true
             }
         })
         res.status(200).json(product)
