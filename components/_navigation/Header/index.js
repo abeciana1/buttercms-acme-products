@@ -8,13 +8,15 @@ import { FaCircleUser } from "react-icons/fa6";
 import Cart from '@/components/_navigation/Cart'
 import Cookies from 'js-cookie'
 import axios from 'axios'
+import { setCartCount } from '@/redux/slices/cartSlice'
+import { useAppDispatch } from '@/redux/hooks'
 
 const Header = ({ mainMenu }) => {
+    const dispatch = useAppDispatch()
     const isEffectRun = useRef(false);
     const [expanded, setExpanded] = useState(false)
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     const { isMobile, isTablet, isDesktop } = useResponsiveness() || {}
-
     
     useEffect(() => {
         if (isEffectRun.current) return;
@@ -29,8 +31,9 @@ const Header = ({ mainMenu }) => {
                         'x-session-id': sessionId,
                     }
                 })
+                dispatch(setCartCount(response.cart?.cartItemsCount))
             } catch (error) {
-                console.error('Error creating cart:', error)
+                console.warn('Error creating cart:', error)
             }
         }
 
@@ -161,7 +164,7 @@ const Header = ({ mainMenu }) => {
             <div className={cx('flex flex-row gap-10 items-center', {
                 ['absolute right-2 gap-5 top-6']: (isMobile || isTablet)
             })}>
-                <Cart size={(isMobile || isTablet) ? 30 : 35} cartItems={5} cartTotal={35.46} />
+                <Cart size={(isMobile || isTablet) ? 30 : 35} />
                 <Link title='My Account' href='/my-account'>
                     <FaCircleUser size={(isMobile || isTablet) ? 30 : 35} />
                 </Link>
