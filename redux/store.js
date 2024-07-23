@@ -1,8 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
-
+import cartReducer from '@/redux/slices/cartSlice'
 
 const store = configureStore({
-    reducer: {},
+    reducer: {
+        cart: cartReducer
+    },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware({
         serializableCheck: false,
         thunk: true
