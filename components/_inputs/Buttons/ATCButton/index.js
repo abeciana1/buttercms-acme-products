@@ -1,7 +1,9 @@
 import cx from 'classnames'
 
 const ATCButton = ({
-    color = 'Red'
+    color = 'Red',
+    quantity = 1,
+    productSku
 }) => {
 
     const atcClickHandler = () => {
