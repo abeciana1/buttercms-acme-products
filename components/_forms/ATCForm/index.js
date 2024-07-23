@@ -54,7 +54,7 @@ const ATCForm = ({
                     </button>
                 </div>
             </form>
-            <div className="max-w-72">
+            <div className="w-60 lg:max-w-72">
                 <ATCButton
                     quantity={quantity}
                     productSku={productSku}
