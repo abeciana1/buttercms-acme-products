@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useLayoutEffect, useState } from 'react'
 import axios from 'axios'
 import Preloader from '@/components/Preloader'
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
@@ -8,12 +8,6 @@ const ProductCarousel = ({
     carouselTitle,
     dataEndpoint
 }) => {
-    const [ products, setProducts ] = useState([])
-    const [ isLoading, setIsLoading ] = useState(false)
-    const [ slidesPerPage, setSlidesPerPage ] = useState(getSlidesPerPage())
-    const [ startIdx , setStartIdx ] = useState(0)
-    const [ endIdx, setEndIdx ] = useState(slidesPerPage)
-
     const getSlidesPerPage = () => {
         if (typeof window !== 'undefined') {
             if (window.innerWidth >= 1050) {
@@ -27,8 +21,17 @@ const ProductCarousel = ({
         return 1;
     }
 
+    const [ products, setProducts ] = useState([])
+    const [ isLoading, setIsLoading ] = useState(false)
+    const [ slidesPerPage, setSlidesPerPage ] = useState(getSlidesPerPage())
+    const [ startIdx , setStartIdx ] = useState(0)
+    const [ endIdx, setEndIdx ] = useState(slidesPerPage)
+
+
     useEffect(() => {
         setSlidesPerPage(getSlidesPerPage());
+        setStartIdx(0);
+        setEndIdx(getSlidesPerPage());
     }, [])
 
     useEffect(() => {
@@ -45,11 +48,9 @@ const ProductCarousel = ({
         fetchProductData()
     }, [])
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         const adjustSlidesPerPage = () => {
             setSlidesPerPage(getSlidesPerPage());
-            setStartIdx(0);
-            setEndIdx(getSlidesPerPage());
         }
 
         if (window) {
