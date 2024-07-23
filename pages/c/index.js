@@ -1,22 +1,36 @@
+import { useEffect } from 'react'
 import { PageLayoutWrapper } from '@/components/_layouts'
 import { getPageData }  from '@/lib/api'
 import axios from 'axios'
-import { useEffect } from 'react'
+import { NextSeo } from 'next-seo'
+import ComponentRenderer from '@/components/ComponentRenderer'
 
-const CatchAllPage = (props) => {
-    console.log('CatchAllPage', props)
-
-    // useEffect(() => {
-    //     const fetchProds = async () => {
-    //         await axios.get('/api/categories/transportation')
-    //         .then(res => console.log('response', res))
-    //     }
-    //     fetchProds()
-    // }, [])
+const CatchAllCategoryPage = ({
+    seo,
+    body
+}) => {
     return (
-        <PageLayoutWrapper>
-            <div>catch all</div>
-        </PageLayoutWrapper>
+        <>
+            <NextSeo
+                title={seo?.title}
+                description={seo?.description}
+                // canonical="" blank for now
+            />
+            <PageLayoutWrapper>
+                <section className="py-10">
+                    <h1 className="font-optiscript text-center">{seo?.title}</h1>
+                    <div className="text-2xl text-center">{seo?.description}</div>
+                </section>
+                {body?.body?.map(({ type, fields: sectionData}, index) => {
+                    return <ComponentRenderer
+                        key={type + index}
+                        type={type}
+                        sectionData={sectionData}
+                        products={body?.products}
+                    />
+                })}
+            </PageLayoutWrapper>
+        </>
     )
 }
 
@@ -33,10 +47,10 @@ export const getServerSideProps = async (context) => {
             body: {
                 body: page?.body?.body,
                 categoryName: page?.body?.category?.category_name,
-                products: response.data
+                products: response.data?.products
             }
         }
     };
 };
 
-export default CatchAllPage
+export default CatchAllCategoryPage
