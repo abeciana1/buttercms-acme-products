@@ -190,7 +190,7 @@ const CatchAllProductPage = ({
                                 }
                             </div>
                             <div className="">
-                                <ATCForm productSku={body?.body?.product_sku} />
+                                <ATCForm productSku={body?.body?.product_sku} productName={product?.name} />
                             </div>
                         </div>
                     </section>
