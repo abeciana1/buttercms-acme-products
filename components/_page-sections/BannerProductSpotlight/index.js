@@ -16,7 +16,7 @@ const ProductSpotlight = ({
     showSecondCta,
     secondCtaHref
 }) => {
-    const productLink = `p/${slugify(product.name)}`
+    const productLink = `/p/${slugify(product.name)}`
     return (
         <div>
             <div className='flex gap-10 items-center'>
@@ -57,7 +57,7 @@ const ProductSpotlight = ({
                         color={secondCtaColor?.brand_color}
                     />
                 }
-                <ATCButton color={productAtcButtonColor?.brand_color} />
+                <ATCButton color={productAtcButtonColor?.brand_color} productSku={product?.sku} product={product?.name} />
             </div>
         </div>
     )
