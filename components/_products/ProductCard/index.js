@@ -22,9 +22,9 @@ const ProductCard = ({ product }) => {
                 </Link>
                 <div className='flex flex-col justify-between items-center flex-grow'>
                     {product.discount > 0 &&
-                        <div className='text-lg text-altRed font-bold'>{product?.discount * 100}% off</div>
+                        <div className='text-lg text-altRed font-bold'>{(product?.discount * 100).toFixed(0)}% off</div>
                     }
-                    <Link href={productLink} title={product.name} className="text-md sm:text-lg text-black font-bold">
+                    <Link href={productLink} title={product.name} className="product-name text-md sm:text-lg text-black font-bold">
                         {product.name}
                     </Link>
                     <div className='flex items-center justify-center gap-3'>
