@@ -5,7 +5,7 @@ const handler = async (req, res) => {
         let category = req.query.slug
         const products = await prisma.category.findFirst({
             where: {
-                name: {
+                slug: {
                     equals: category,
                     mode: 'insensitive',
                 }
@@ -23,6 +23,7 @@ const handler = async (req, res) => {
                 }
             }
         })
+        console.log('products', products)
         res.status(200).json(products)
     }
 }
