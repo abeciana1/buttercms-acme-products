@@ -15,7 +15,7 @@ import Accordion from '@/components/_page-sections/Accordion'
 import ProductCarousel from '@/components/_page-sections/ProductCarousel'
 import { slugify } from '@/lib/helper-functions'
 
-const CatchAll = ({
+const CatchAllProductPage = ({
     seo,
     body,
     product
@@ -25,7 +25,6 @@ const CatchAll = ({
     const [ endIdx, setEndIdx ] = useState(1)
     const imageLength = body?.body?.product_image?.length
     const slugifiedCategoryName = slugify(body?.body?.category?.category_name)
-    console.log('testing', body?.body)
     const productImages = useMemo(() => {
         body?.product_images?.map((prodImage) => {
             return prodImage.image
@@ -90,7 +89,7 @@ const CatchAll = ({
                         {isDesktop &&
                             body?.body?.product_image?.slice(startIdx, endIdx)?.map((image, index) => {
                                 return (
-                                    <div className="relative w-96 h-96">
+                                    <div key={body?.body?.product_name + index + 'key'} className="relative w-96 h-96">
                                         <Image
                                             key={body?.body?.product_name + index}
                                             src={image.image}
@@ -230,7 +229,7 @@ const CatchAll = ({
     )
 }
 
-export default CatchAll
+export default CatchAllProductPage
 
 export const getServerSideProps = async (context) => {
     let page = await getPageData('product_detail', context?.query?.slug);
