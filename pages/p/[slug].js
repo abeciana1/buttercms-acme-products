@@ -118,7 +118,7 @@ const CatchAllProductPage = ({
                             href={'/' + body?.body?.category?.category_slug}
                             title={`Shop all ${body?.body?.category?.category_name} products`}
                             className="underline underline-offset-2 decoration-2"
-                        >Shop all {body?.body?.category?.category_name}</Link>
+                        >Shop all {body?.body?.category?.category_name}s</Link>
                         <h1>{body?.body?.product_name}</h1>
                         {(isTablet || isMobile) &&
                             body?.body?.product_image?.slice(startIdx, endIdx)?.map((image, index) => {
