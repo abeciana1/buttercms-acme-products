@@ -2,7 +2,6 @@ import prisma from '@/lib/prisma'
 import { runMiddleware } from '../../../middleware/corsMiddleware'
 
 const handler = async (req, res) => {
-    console.log('getorcreate')
     await runMiddleware(req, res)
     if (req.method === 'POST') {
         const sessionId = req.headers['x-session-id'];
@@ -13,10 +12,11 @@ const handler = async (req, res) => {
 
         try {
             let cart = await prisma.cart.findUnique({
-            where: { sessionId },
+                where: { sessionId },
+                include: {
+                    cartItems: true
+                }
             });
-
-            console.log('GOCcart', cart)
     
             if (!cart) {
                 cart = await prisma.cart.create({
@@ -25,10 +25,15 @@ const handler = async (req, res) => {
                         subTotal: 0.00,
                         shippingTotal: 0.00,
                     },
+                    include: {
+                        cartItems: true
+                    }
                 });
             }
+
+            const cartItemsCount = cart.cartItems.reduce((total, item) => total + item.quantity, 0);
     
-            res.status(200).json({ success: true, cart });
+            res.status(200).json({ success: true, cart: { ...cart, cartItemsCount } });
         } catch (error) {
             res.status(500).json({ error: 'Database query failed' });
         }
