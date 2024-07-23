@@ -7,7 +7,7 @@ const Breadcrumbs = ({
 }) => {
     return (
         <nav aria-label="Breadcrumb">
-            <ol className="flex flex-row items-center">
+            <ol className="flex flex-row flex-wrap items-center">
                 <Breadcrumb text='ACME' href='/' />
                 <Breadcrumb text={categoryName} href={categorySlug} />
                 <Breadcrumb text={productName} />
