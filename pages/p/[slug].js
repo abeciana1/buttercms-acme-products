@@ -123,7 +123,7 @@ const CatchAllProductPage = ({
                         {(isTablet || isMobile) &&
                             body?.body?.product_image?.slice(startIdx, endIdx)?.map((image, index) => {
                                 return (
-                                    <div className="relative w-64 h-64 md:w-80 md:h-80 mx-auto my-5">
+                                    <div key={body?.body?.product_name + index + 'key'} className="relative w-64 h-64 md:w-80 md:h-80 mx-auto my-5">
                                         <Image
                                             key={body?.body?.product_name + index}
                                             src={image.image}
