@@ -3,7 +3,6 @@ import prisma from '@/lib/prisma'
 const handler = async (req, res) => {
     if (req.method === 'GET') {
         let category = req.query.slug
-        console.log('!!category', category)
         if (category === 'all') {
             const products = await prisma.product.findMany()
             res.status(200).json(products)
@@ -28,7 +27,6 @@ const handler = async (req, res) => {
                     }
                 }
             })
-            console.log('products', products)
             res.status(200).json(products?.products)
         }
     }
