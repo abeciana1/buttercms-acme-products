@@ -2,26 +2,24 @@ import prisma from '@/lib/prisma'
 
 const handler = async (req, res) => {
     if (req.method === 'GET') {
-        const products = await prisma.category.findFirst({
+        const products = await prisma.product.findMany({
             where: {
-                slug: {
-                    equals: 'home-goods'
-                }
-            },
-            include: {
-                products: {
-                    select: {
-                        name: true,
-                        discount: true,
-                        price: true,
-                        mainImage: true,
-                        discountPrice: true,
-                        sku: true
+                category: {
+                    slug: {
+                        equals: 'home-goods'
                     }
                 }
+            },
+            select: {
+                name: true,
+                discount: true,
+                price: true,
+                mainImage: true,
+                discountPrice: true,
+                sku: true
             }
         })
-        res.status(200).json(products?.products)
+        res.status(200).json(products)
     }
 }
 
