@@ -54,6 +54,10 @@ h2 {
   @apply leading-tight;
 }
 
+.product-name {
+  @apply leading-4 !important;
+}
+
 /*===== All Preloader Style =====*/
 .preloader {
   /* Body Overlay */
