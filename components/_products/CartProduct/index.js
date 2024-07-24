@@ -37,7 +37,7 @@ const CartProduct = ({
                         className="font-bold text-xl">{product?.name}</Link>
                     <div className="text-lg text-black">Quantity: {cartItem?.quantity}</div>
                     <div
-                        className={cx("flex", {
+                        className={cx("flex flex-wrap", {
                             ['flex-col item-baseline']: product.discount === 0,
                             ['items-baseline']: product.discount > 0,
                             ['flex-col']: (product.discount > 0 && cartItem?.quantity > 1),
@@ -46,7 +46,7 @@ const CartProduct = ({
                         {product.discount > 0 &&
                             <>
                                 <div className='text-2xl sm:text-3xl text-altRed font-bold'>${cartItem?.quantity > 1 ? (product.discountPrice.toFixed(2) * cartItem?.quantity) : product.discountPrice.toFixed(2)}</div>
-                                <div className="ml-2">
+                                <div className="sm:ml-2">
                                     reg. <span className='line-through'>${product?.price.toFixed(2)}</span>
                                 </div>
                                 {cartItem?.quantity > 1 &&
