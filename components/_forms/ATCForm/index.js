@@ -44,7 +44,7 @@ const ATCForm = ({
                             type="number"
                             value={quantity}
                             onChange={handleQuantityChange}
-                            className="text-lg text-center w-14 border-2 border-black rounded-md"
+                            className="text-lg text-center w-14 border-2 border-gray-700 rounded-md"
                         />
                     <button
                         onClick={handleIncreaseQuantity}

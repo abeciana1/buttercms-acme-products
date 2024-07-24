@@ -15,7 +15,7 @@ module.exports = {
         altOrange: '#ED8B00',
         altRed: '#E03C31',
         brown: '#603D20',
-        black: '#101820',
+        black: '#374151',
         white: '#fff',
         ...colors
       },

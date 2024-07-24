@@ -15,7 +15,7 @@ export const LinkLookLikeButton = ({
                 ['bg-utilityGreen text-white']: color === 'Green',
                 ['bg-altRed text-white']: color === 'Red',
                 ['bg-orange text-white']: color === 'Orange',
-                ['bg-skyBlue text-black']: color === 'SkyBlue',
+                ['bg-skyBlue text-gray-700']: color === 'SkyBlue',
             })}
         >
             {linkText}

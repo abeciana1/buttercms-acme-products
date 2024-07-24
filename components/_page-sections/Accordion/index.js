@@ -9,7 +9,7 @@ const Accordion = ({ title, content }) => {
     };
 
     return (
-        <div className="mb-4 border-b-2 border-black">
+        <div className="mb-4 border-b-2 border-gray-700">
             <button
                 onClick={toggleAccordion}
                 className="w-full py-4 text-left focus:outline-none focus-visible:ring focus-visible:ring-opacity-75"

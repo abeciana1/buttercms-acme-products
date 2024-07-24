@@ -21,12 +21,12 @@ const ProductSpotlight = ({
         <div>
             <div className='flex gap-10 items-center'>
                 <Link href={productLink} title={product.name}>
-                    <div>
+                    <div className="relative w-60 h-60">
                         <Image
                             src={imageInfo.productImage}
                             alt={`${product.name} product image`}
-                            width={imageInfo.productImageWidth}
-                            height={imageInfo.productImageHeight}
+                            fill
+                            objectFit="contain"
                         />
                     </div>
                 </Link>
@@ -34,9 +34,9 @@ const ProductSpotlight = ({
                     {product.discount > 0 &&
                         <div className='text-lg text-altRed font-bold'>{product?.discount * 100}% off</div>
                     }
-                    <Link href={productLink} title={product.name} className="text-2xl font-bold text-black">{product.name}</Link>
+                    <Link href={productLink} title={product.name} className="text-2xl font-bold text-gray-700">{product.name}</Link>
                     <div 
-                        className={cx("text-black", {
+                        className={cx("text-gray-700", {
                             ['line-through decoration-2 text-xl font-medium']: product.discount > 0,
                             ['text-3xl font-bold']: product.discount === 0
                         })}

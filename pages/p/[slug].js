@@ -84,7 +84,7 @@ const CatchAllProductPage = ({
                     categorySlug={body?.body?.category?.category_slug}
                     productName={body?.body?.product_name}
                 />
-                <section className="pt-10 flex flex-col lg:flex-row justify-center relative lg:divide-x-2 lg:divide-black">
+                <section className="pt-10 flex flex-col lg:flex-row justify-center relative lg:divide-x-2 lg:divide-gray-700">
                     <section className="md:pr-16 lg:pr-20">
                         {isDesktop &&
                             body?.body?.product_image?.slice(startIdx, endIdx)?.map((image, index) => {
@@ -166,7 +166,7 @@ const CatchAllProductPage = ({
                                         </>
                                     }
                                     {product.discount === 0 &&
-                                        <div className='text-2xl sm:text-3xl text-black font-bold'>${product?.price.toFixed(2)}</div>
+                                        <div className='text-2xl sm:text-3xl text-bg-gray-700 font-bold'>${product?.price.toFixed(2)}</div>
                                     }
                                 </div>
                                 {product?.discount > 0 &&

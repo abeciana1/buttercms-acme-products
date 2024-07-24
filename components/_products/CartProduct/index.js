@@ -35,7 +35,7 @@ const CartProduct = ({
                         href={`/p/${slugifiedProductName}`}
                         title={`${product?.name} product page`} 
                         className="font-bold text-xl">{product?.name}</Link>
-                    <div className="text-lg text-black">Quantity: {cartItem?.quantity}</div>
+                    <div className="text-lg text-gray-700">Quantity: {cartItem?.quantity}</div>
                     <div
                         className={cx("flex flex-wrap", {
                             ['flex-col item-baseline']: product.discount === 0,
@@ -50,15 +50,15 @@ const CartProduct = ({
                                     reg. <span className='line-through'>${product?.price.toFixed(2)}</span>
                                 </div>
                                 {cartItem?.quantity > 1 &&
-                                    <div className='text-md sm:text-lg text-black font-bold'>${product?.discountPrice.toFixed(2)} ea.</div>
+                                    <div className='text-md sm:text-lg text-gray-700 font-bold'>${product?.discountPrice.toFixed(2)} ea.</div>
                                 }
                             </>
                         }
                         {product.discount === 0 &&
                             <>
-                                <div className='text-2xl sm:text-3xl text-black font-bold'>${cartItem?.quantity > 1 ? (product?.price.toFixed(2) * cartItem?.quantity).toFixed(2) : product?.price.toFixed(2)}</div>
+                                <div className='text-2xl sm:text-3xl text-gray-700 font-bold'>${cartItem?.quantity > 1 ? (product?.price.toFixed(2) * cartItem?.quantity).toFixed(2) : product?.price.toFixed(2)}</div>
                                 {cartItem?.quantity > 1 &&
-                                    <div className='text-md sm:text-lg text-black font-bold'>${product?.price.toFixed(2)} ea.</div>
+                                    <div className='text-md sm:text-lg text-gray-700 font-bold'>${product?.price.toFixed(2)} ea.</div>
                                 }
                             </>
                         }
@@ -73,7 +73,7 @@ const CartProduct = ({
                 <div></div>
             </div>
             <button
-                className="absolute top-2 right-2 text-black"
+                className="absolute top-2 right-2 text-gray-700"
                 onClick={handleRemoveFromCart}
             >
                 <IoCloseOutline size={30} className="stroke-[5]" />
