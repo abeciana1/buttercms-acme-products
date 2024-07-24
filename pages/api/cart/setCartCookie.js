@@ -11,7 +11,7 @@ const handler = async (req, res) => {
             httpOnly: false,
             secure: process.env.NODE_ENV === 'production',
             maxAge: 60 * 60 * 24 * 7,
-            sameSite: 'strict',
+            sameSite: 'lax',
             path: '/',
         });
 
