@@ -1,13 +1,18 @@
 import cx from 'classnames'
+import { useAppDispatch } from '@/redux/hooks'
+import { addProductToCart } from '@/redux/actions/cartAction'
 
 const ATCButton = ({
     color = 'Red',
     quantity = 1,
-    productSku
+    productSku,
+    productName
 }) => {
+    const dispatch = useAppDispatch()
 
-    const atcClickHandler = () => {
-        console.log('Add to cart clicked')
+    const atcClickHandler = (e) => {
+        e.preventDefault();
+        dispatch(addProductToCart(quantity, productSku))
     }
 
     return (
