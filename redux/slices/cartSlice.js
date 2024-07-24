@@ -29,7 +29,7 @@ const cartSlice = createSlice({
 
 export const {
     setCart,
-    setCartNum,
+    setCartCount,
     setCartItems,
     clearCart
 } = cartSlice.actions
