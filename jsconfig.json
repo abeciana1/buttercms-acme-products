@@ -13,6 +13,9 @@
       ],
       "@/redux/*": [
         "redux/*"
+      ],
+      "@/middleware/*": [
+        "middleware/*"
       ]
     }
   }
