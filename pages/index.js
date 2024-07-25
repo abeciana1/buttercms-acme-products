@@ -25,11 +25,24 @@ const Home = ({ seo, body }) => {
 }
 
 export const getStaticProps = async () => {
-    let { seo, body } = await getPageData('page','homepage')
-    return {
-        props: {
-            seo,
-            body
+    try {
+        let { seo, body } = await getPageData('page','homepage')
+        return {
+            props: {
+                seo,
+                body
+            }
+        }
+    } catch (error) {
+        const page = await getPageData('page', '404')
+        return {
+            props: {
+                seo: {
+                    title: page?.body?.seo?.title,
+                    description: page?.body?.seo?.description,
+                },
+                body: page?.body,
+            }
         }
     }
 }
