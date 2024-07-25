@@ -67,7 +67,7 @@ const CartPage = ({
                                         <div className="font-bold text-lg">Estimated shipping:</div>
                                         <div className="font-bold text-lg">${(cartState.shippingTotal).toFixed(2)}</div>
                                     </div>
-                                    <div className="flex justify-between">
+                                    <div className="flex justify-between border-t-2 border-gray-700 mt-2 pt-2">
                                         <div className="font-bold text-lg">Total:</div>
                                         <div className="font-bold text-lg">${(cartState.subTotal + cartState.shippingTotal).toFixed(2)}</div>
                                     </div>
@@ -76,8 +76,6 @@ const CartPage = ({
                         </section>
                     </section>
                 </>
-                {/* {cartState &&
-                } */}
             </PageLayoutWrapper>
         </>
     )
