@@ -1,8 +1,8 @@
 import prisma from '@/lib/prisma'
-import { runMiddleware } from '../../../middleware/corsMiddleware'
+// import { runMiddleware } from '../../../middleware/corsMiddleware'
 
 const handler = async (req, res) => {
-    await runMiddleware(req, res)
+    // await runMiddleware(req, res)
     if (req.method === 'POST') {
         const sessionId = req.headers['x-session-id'];
 
