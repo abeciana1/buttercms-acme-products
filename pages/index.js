@@ -24,7 +24,7 @@ const Home = ({ seo, body }) => {
     )
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
     try {
         let { seo, body } = await getPageData('page','homepage')
         return {
