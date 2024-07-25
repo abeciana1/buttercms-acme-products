@@ -27,7 +27,7 @@ const handler = async (req, res) => {
             }
         })
         // * find cart item
-        let foundCartItem = await prisma.cartItem.findUnique({
+        let foundCartItem = await prisma.cartItem.findFirst({
             where: {
                 cartId: foundCart.id,
                 productId: foundProduct.id
