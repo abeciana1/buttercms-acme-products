@@ -60,7 +60,7 @@ const main = async () => {
     //             category: {
     //                 connectOrCreate: {
     //                     where: {
-    //                         id: lookupCats[product.categoryId],
+    //                         id: lookupCats[product.categoryId].id,
     //                     },
     //                     create: {
     //                         name: 'unknown_category',
