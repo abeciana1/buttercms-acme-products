@@ -7,6 +7,7 @@ import { setCart, setCartItems } from '@/redux/slices/cartSlice'
 import CartProduct from '@/components/_products/CartProduct'
 import useResponsiveness from '@/lib/hooks/useResponsiveness'
 import cx from 'classnames'
+import Cookies from 'js-cookie'
 
 const CartPage = ({
     cart,
@@ -19,16 +20,29 @@ const CartPage = ({
     const { isMobile, isTablet, isDesktop } = useResponsiveness() || {}
 
     useEffect(() => {
-        if (cart) {
-            dispatch(setCart(cart))
-            dispatch(setCartItems(cartItems))
+        
+        // let seshId = JSON.parse(cookies.ACMEcart).sessionId;
+        const fetchCart = async () => {
+            const seshId = JSON.parse(Cookies.get('ACMEcart')).sessionId
+            // https://buttercms-acme-products-uevi.vercel.app
+            if (seshId) {
+                const res = await axios.get('http://localhost:3000/api/cart/getCartItems', {
+                    "headers": {
+                        'x-session-id': seshId
+                    },
+                    withCredentials: true,
+                });
+                dispatch(setCart(res.data.cart))
+                dispatch(setCartItems(res.data.cart.cartItems))
+            }
         }
-    }, [cart, cartItems])
+        fetchCart()
+    }, [])
 
     return (
         <>
             <PageLayoutWrapper>
-        {cartState &&
+                {cartState &&
                 <>
                     <div>
                         <h1 className="font-bold">Cart</h1>
@@ -77,7 +91,7 @@ const CartPage = ({
                         </section>
                     </section>
                 </>
-            }
+                }
             </PageLayoutWrapper>
         </>
     )
@@ -85,23 +99,11 @@ const CartPage = ({
 
 export default CartPage
 
-export const getServerSideProps = async (context) => {
-    try {
-        let cookies = cookie.parse(context.req.headers.cookie)
-        let seshId = JSON.parse(cookies.ACMEcart).sessionId;
-        const res = await axios.get('https://buttercms-acme-products-uevi.vercel.app/api/cart/getCartItems', {
-            "headers": {
-                "cookie": seshId,
-            },
-            "withCredentials": true,
-        });
-        return {
-            props: {
-                cart: res?.data?.cart,
-                cartItems: res?.data?.cart?.cartItems,
-            }
-        }
-    } catch (error) {
-        return { props: { cartItems: [] } };
-    }
-}
+// export const getServerSideProps = async (context) => {
+//     try {
+//         let cookies = cookie.parse(context.req.headers.cookie)
+
+//     } catch (error) {
+//         return { props: { cartItems: [] } };
+//     }
+// }
