@@ -9,8 +9,8 @@ generator client {
 }
 
 datasource db {
-  provider  = "postgresql"
-  url       = env("DATABASE_URL")
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
   // directUrl = env("DIRECT_DATABASE_URL")
 }
 
@@ -83,9 +83,9 @@ model Cart {
 
 model CartItem {
   id        Int      @id @default(autoincrement())
-  cartId    Int      @unique
+  cartId    Int
   cart      Cart     @relation(fields: [cartId], references: [id])
-  productId Int      @unique
+  productId Int
   product   Product  @relation(fields: [productId], references: [id])
   quantity  Int      @default(1)
   createdAt DateTime @default(now())
