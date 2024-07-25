@@ -4,7 +4,7 @@ import { toPascalCase } from "@/lib/helper-functions"
 import camelcaseKeys from 'camelcase-keys';
 import MissingSection from '@/components/_page-sections/MissingSection'
 
-export default function ComponentRenderer({ type, sectionData, products = [] }) {
+const ComponentRenderer = ({ type, sectionData, products = [] }) => {
 	const sectionsComponentPaths = () => ({
 		[type]: dynamic(
 			() => import(`@/components/_page-sections/${toPascalCase(type)}`)
@@ -17,3 +17,5 @@ export default function ComponentRenderer({ type, sectionData, products = [] }) 
 
 	return <SectionComponent type={type} {...camelcaseKeys(sectionData)} products={products} />
 }
+
+export default ComponentRenderer
