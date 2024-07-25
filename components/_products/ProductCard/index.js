@@ -33,9 +33,9 @@ const ProductCard = ({ product }) => {
                                 ['line-through decoration-2 text-lg sm:text-xl']: product.discount > 0,
                                 ['text-3xl font-bold']: product.discount === 0
                             })}
-                        >${product.price.toFixed(2)}</div>
-                        {product.discount > 0 &&
-                            <div className='text-lg sm:text-3xl text-altOrange font-bold'>${product.discountPrice.toFixed(2)}</div>
+                        >${product?.price?.toFixed(2)}</div>
+                        {product?.discount > 0 &&
+                            <div className='text-lg sm:text-3xl text-altOrange font-bold'>${product?.discountPrice?.toFixed(2)}</div>
                         }
                     </div>
                     <ATCButton productSku={product?.sku} productName={product?.name} />
