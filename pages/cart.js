@@ -28,7 +28,7 @@ const CartPage = ({
     return (
         <>
             <PageLayoutWrapper>
-            {cartState &&
+        {cartState &&
                 <>
                     <div>
                         <h1 className="font-bold">Cart</h1>
