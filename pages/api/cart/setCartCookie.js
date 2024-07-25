@@ -1,7 +1,6 @@
 import { serialize } from 'cookie';
 import { runMiddleware } from '../../../middleware/corsMiddleware'
 import { generateAlphanumericId } from '@/lib/helper-functions'
-import { zhCN } from 'date-fns/locale';
 
 const handler = async (req, res) => {
     await runMiddleware(req, res)

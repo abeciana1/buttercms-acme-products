@@ -2,11 +2,11 @@ import prisma from '@/lib/prisma'
 import { runMiddleware } from '@/middleware/corsMiddleware'
 
 const handler = async (req, res) => {
-    await runMiddleware(req, res)
+    // await runMiddleware(req, res)
     if (req.method === 'GET') {
         const cart = await prisma.cart.findUnique({
             where: {
-                sessionId: req.headers.cookie,
+                sessionId: req.headers['x-session-id'] || req.headers?.cookie,
             },
             include: {
                 cartItems: {
