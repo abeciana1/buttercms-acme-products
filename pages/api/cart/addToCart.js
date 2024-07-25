@@ -78,7 +78,8 @@ const handler = async (req, res) => {
                     })
                 }
             })
-        } else {
+        } else if (foundCart && foundProduct) {
+            console.log('creating new cart item')
             await prisma.$transaction(async (prisma) => {
                 const newCartItem = await prisma.cartItem.create({
                     data: {
