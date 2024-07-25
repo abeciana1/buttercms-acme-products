@@ -45,7 +45,7 @@ export const getServerSideProps = async (context) => {
             },
             body: {
                 body: page?.body?.body,
-                products: response.data
+                products: response?.data
             }
         }
     };

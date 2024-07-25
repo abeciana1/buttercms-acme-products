@@ -95,8 +95,8 @@ export const getServerSideProps = async (context) => {
         });
         return {
             props: {
-                cart: res.data.cart,
-                cartItems: res.data.cart.cartItems,
+                cart: res?.data?.cart,
+                cartItems: res?.data?.cart?.cartItems,
             }
         }
     } catch (error) {
