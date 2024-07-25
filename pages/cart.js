@@ -87,7 +87,7 @@ export const getServerSideProps = async (context) => {
     try {
         let cookies = cookie.parse(context.req.headers.cookie)
         let seshId = JSON.parse(cookies.ACMEcart).sessionId;
-        const res = await axios.get('http://localhost:3000/api/cart/getCartItems', {
+        const res = await axios.get('https://buttercms-acme-products-uevi.vercel.app/api/cart/getCartItems', {
             "headers": {
                 "cookie": seshId,
             },

@@ -233,7 +233,7 @@ export default CatchAllProductPage
 
 export const getServerSideProps = async (context) => {
     let page = await getPageData('product_detail', context?.query?.slug);
-    let product = await axios.get('http://localhost:3000/api/products/' + page?.body?.product_sku)
+    let product = await axios.get('https://buttercms-acme-products-uevi.vercel.app/api/products/' + page?.body?.product_sku)
     return {
         props: {
             seo: {

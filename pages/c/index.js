@@ -35,7 +35,7 @@ const CatchAllCategoryPage = ({
 
 export const getServerSideProps = async (context) => {
     let page = await getPageData('category_page', context?.query?.category);
-    const response = await axios.get('http://localhost:3000/api/categories/' + context?.query?.category)
+    const response = await axios.get('https://buttercms-acme-products-uevi.vercel.app/api/categories/' + context?.query?.category)
     return {
         props: {
             seo: {
