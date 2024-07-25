@@ -3,7 +3,7 @@ import Cors from 'cors'
 const allowedOrigins = ['http://localhost:3000', 'https://buttercms-acme-products.vercel.app']
 
 const cors = Cors({
-    methods: ['GET', 'POST', 'PATCH', 'DELETE'], 
+    methods: ['GET', 'POST'], 
     origin: (origin, callback) => {
         if (!origin || allowedOrigins.includes(origin)) {
             callback(null, true)
