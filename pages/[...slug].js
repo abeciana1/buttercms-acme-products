@@ -4,7 +4,6 @@ import ComponentRenderer from '@/components/ComponentRenderer'
 import { PageLayoutWrapper } from '@/components/_layouts'
 
 const DynamicPage = (props) => {
-    console.log('pops', props)
     return (
         <>
             <NextSeo
