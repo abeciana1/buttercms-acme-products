@@ -1,6 +1,6 @@
 import Cors from 'cors'
 
-const allowedOrigins = ['http://localhost:3000', 'https://drop-the-needle.vercel.app']
+const allowedOrigins = ['http://localhost:3000', 'https://buttercms-acme-products.vercel.app']
 
 const cors = Cors({
     methods: ['GET', 'POST', 'PATCH', 'DELETE'], 
