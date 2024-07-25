@@ -29,7 +29,7 @@ const CatchAllProductPage = ({
         body?.product_images?.map((prodImage) => {
             return prodImage.image
         })
-    }, [])
+    }, [body?.product_images])
 
     const nextSlide = () => {
         setStartIdx((prevStartIdx) => {

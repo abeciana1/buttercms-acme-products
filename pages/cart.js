@@ -23,7 +23,7 @@ const CartPage = ({
             dispatch(setCart(cart))
             dispatch(setCartItems(cartItems))
         }
-    }, [])
+    }, [cart, cartItems])
 
     return (
         <>
