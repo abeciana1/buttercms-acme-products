@@ -91,7 +91,7 @@ const ProductCarousel = ({
         </div>
         <section className='pt-5'>
             {isLoading && <Preloader />}
-            {(!isLoading && products.length > 0) &&
+            {((products && !isLoading) && products.length > 0) &&
                 <section className='flex gap-5 justify-center'>
                     {Array(slidesPerPage).fill().map((_, i) => {
                         const productIdx = (startIdx + i) % products.length;
