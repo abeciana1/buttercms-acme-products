@@ -98,12 +98,3 @@ const CartPage = ({
 }
 
 export default CartPage
-
-// export const getServerSideProps = async (context) => {
-//     try {
-//         let cookies = cookie.parse(context.req.headers.cookie)
-
-//     } catch (error) {
-//         return { props: { cartItems: [] } };
-//     }
-// }
