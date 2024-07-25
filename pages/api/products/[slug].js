@@ -1,6 +1,8 @@
 import prisma from '@/lib/prisma'
+import { runMiddleware } from '@/middleware/corsMiddleware'
 
 const handler = async (req, res) => {
+    await runMiddleware(req, res)
     if (req.method === 'GET') {
         const product = await prisma.product.findUnique({
             where: {
