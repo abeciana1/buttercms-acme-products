@@ -26,7 +26,7 @@ const CartPage = ({
             const seshId = JSON.parse(Cookies.get('ACMEcart')).sessionId
             // https://buttercms-acme-products-uevi.vercel.app
             if (seshId) {
-                const res = await axios.get('http://localhost:3000/api/cart/getCartItems', {
+                const res = await axios.get('/api/cart/getCartItems', {
                     "headers": {
                         'x-session-id': seshId
                     },
