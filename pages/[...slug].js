@@ -9,6 +9,8 @@ const DynamicPage = (props) => {
             <NextSeo
                 title={props?.seo?.title}
                 description={props?.seo?.description}
+                noindex={props?.seo?.noindex}
+                canonical={typeof window!== 'undefined'? window.location.href : ''}
             />
             <PageLayoutWrapper>
                 {props?.body?.body?.map(({ type, fields: sectionData}, index) => {
@@ -34,17 +36,20 @@ export const getServerSideProps = async (context) => {
                 seo: {
                     title: page?.body?.seo?.title,
                     description: page?.body?.seo?.description,
+                    noIndex: page?.body?.seo?.no_index
                 },
                 body: page?.body,
             }
         }
     } catch (error) {
         const page = await getPageData('page', '404')
+        console.log('page', page)
         return {
             props: {
                 seo: {
                     title: page?.body?.seo?.title,
                     description: page?.body?.seo?.description,
+                    noIndex: page?.body?.seo?.no_index
                 },
                 body: page?.body,
             }
