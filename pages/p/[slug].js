@@ -58,6 +58,8 @@ const CatchAllProductPage = ({
             <NextSeo
                 title={seo?.title}
                 description={seo?.description}
+                noindex={seo?.noindex}
+                canonical={typeof window!== 'undefined'? window.location.href : ''}
             />
             <ProductJsonLd
                 productName={body?.product_name}
@@ -240,6 +242,7 @@ export const getServerSideProps = async (context) => {
                 title: page?.body?.seo?.title || '',
                 description: page?.body?.seo?.description || '',
                 jsonLDSchema: page?.body?.seo?.json_ld_schema || '',
+                noIndex: page?.body?.seo?.no_index
             },
             body: {
                 body: page?.body

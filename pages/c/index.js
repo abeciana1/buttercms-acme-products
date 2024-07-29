@@ -13,7 +13,7 @@ const CatchAllCategoryPage = ({
             <NextSeo
                 title={seo?.title}
                 description={seo?.description}
-                // canonical="" blank for now
+                canonical={typeof window!== 'undefined'? window.location.href : ''}
             />
             <PageLayoutWrapper>
                 <section className="py-10">

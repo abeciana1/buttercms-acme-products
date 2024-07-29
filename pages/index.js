@@ -9,7 +9,8 @@ const Home = ({ seo, body }) => {
             <NextSeo
                 title={seo?.title}
                 description={seo?.description}
-                // canonical="" blank for now
+                noindex={seo?.noindex}
+                canonical={typeof window!== 'undefined'? window.location.href : ''}
             />
             <PageLayoutWrapper>
                 {body?.body?.map(({ type, fields: sectionData}, index) => {
@@ -40,6 +41,7 @@ export const getServerSideProps = async () => {
                 seo: {
                     title: page?.body?.seo?.title,
                     description: page?.body?.seo?.description,
+                    noIndex: page?.body?.seo?.no_index
                 },
                 body: page?.body,
             }
