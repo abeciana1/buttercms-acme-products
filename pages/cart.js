@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { PageLayoutWrapper } from '@/components/_layouts'
 import { useAppDispatch, useAppSelector } from '@/redux/hooks'
 import axios from 'axios'
-import cookie from 'cookie';
+import { NextSeo } from 'next-seo'
 import { setCart, setCartItems } from '@/redux/slices/cartSlice'
 import CartProduct from '@/components/_products/CartProduct'
 import useResponsiveness from '@/lib/hooks/useResponsiveness'
@@ -20,11 +20,8 @@ const CartPage = ({
     const { isMobile, isTablet, isDesktop } = useResponsiveness() || {}
 
     useEffect(() => {
-        
-        // let seshId = JSON.parse(cookies.ACMEcart).sessionId;
         const fetchCart = async () => {
             const seshId = JSON.parse(Cookies.get('ACMEcart')).sessionId
-            // https://buttercms-acme-products-uevi.vercel.app
             if (seshId) {
                 const res = await axios.get('/api/cart/getCartItems', {
                     "headers": {
@@ -41,6 +38,13 @@ const CartPage = ({
 
     return (
         <>
+            <NextSeo
+                title="ACME | Cart"
+                description="Shop ACME for a unique selection of fun and innovative products that bring joy and practicality to your life. Discover the ACME difference today!"
+                canonical={typeof window!== 'undefined'? window.location.href : ''}
+                noindex={false}
+                nofollow={false}
+            />
             <PageLayoutWrapper>
                 {cartState &&
                 <>
