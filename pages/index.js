@@ -25,7 +25,7 @@ const Home = ({ seo, body }) => {
     )
 }
 
-export const getServerSideProps = async () => {
+export const getServerSideProps = async (context) => {
     const params = {
         'preview': context?.query?.preview === '1' ? 1 : 0
     }
