@@ -28,9 +28,12 @@ const DynamicPage = (props) => {
 export default DynamicPage
 
 export const getServerSideProps = async (context) => {
+    const params = {
+        'preview': context?.query?.preview === '1' ? 1 : 0
+    }
     try {
         let path = context?.query?.slug
-        const page = await getPageData('page', path)
+        const page = await getPageData('page', path, params)
         return {
             props: {
                 seo: {
@@ -42,8 +45,7 @@ export const getServerSideProps = async (context) => {
             }
         }
     } catch (error) {
-        const page = await getPageData('page', '404')
-        console.log('page', page)
+        const page = await getPageData('page', '404', params)
         return {
             props: {
                 seo: {

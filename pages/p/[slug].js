@@ -256,8 +256,11 @@ const CatchAllProductPage = ({
 export default CatchAllProductPage
 
 export const getServerSideProps = async (context) => {
+    const params = {
+        'preview': context?.query?.preview === '1' ? 1 : 0
+    }
     try {
-        let page = await getPageData('product_detail', context?.query?.slug);
+        let page = await getPageData('product_detail', context?.query?.slug, params);
         let product = await axios.get('https://buttercms-acme-products-uevi.vercel.app/api/products/' + page?.body?.product_sku)
         return {
             props: {
@@ -275,7 +278,7 @@ export const getServerSideProps = async (context) => {
             }
         };
     } catch (error) {
-        const page = await getPageData('page', '404')
+        const page = await getPageData('page', '404', params)
         return {
             props: {
                 seo: {
