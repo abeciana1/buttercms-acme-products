@@ -6,7 +6,8 @@ import ComponentRenderer from '@/components/ComponentRenderer'
 
 const CatchAllCategoryPage = ({
     seo,
-    body
+    body,
+    notFound
 }) => {
     return (
         <>
@@ -16,10 +17,12 @@ const CatchAllCategoryPage = ({
                 canonical={typeof window!== 'undefined'? window.location.href : ''}
             />
             <PageLayoutWrapper>
-                <section className="py-10">
-                    <h1 className="font-optiscript text-center">{seo?.title}</h1>
-                    <div className="text-2xl text-center">{seo?.description}</div>
-                </section>
+                {!notFound &&
+                    <section className="py-10">
+                        <h1 className="font-optiscript text-center">{seo?.title}</h1>
+                        <div className="text-2xl text-center">{seo?.description}</div>
+                    </section>
+                }
                 {body?.body?.map(({ type, fields: sectionData}, index) => {
                     return <ComponentRenderer
                         key={type + index}
@@ -34,21 +37,37 @@ const CatchAllCategoryPage = ({
 }
 
 export const getServerSideProps = async (context) => {
-    let page = await getPageData('category_page', context?.query?.category);
-    const response = await axios.get('https://buttercms-acme-products-uevi.vercel.app/api/categories/' + context?.query?.category)
-    return {
-        props: {
-            seo: {
-                title: page?.body?.seo?.title || '',
-                description: page?.body?.seo?.description || '',
-                jsonLDSchema: page?.body?.seo?.json_ld_schema || '',
-            },
-            body: {
-                body: page?.body?.body,
-                products: response?.data
+    try {
+        let page = await getPageData('category_page', context?.query?.category);
+        const response = await axios.get('https://buttercms-acme-products-uevi.vercel.app/api/categories/' + context?.query?.category)
+        return {
+            props: {
+                seo: {
+                    title: page?.body?.seo?.title || '',
+                    description: page?.body?.seo?.description || '',
+                    jsonLDSchema: page?.body?.seo?.json_ld_schema || '',
+                },
+                body: {
+                    body: page?.body?.body,
+                    products: response?.data
+                },
+                notFound: false
+            }
+        };
+    } catch (error) {
+        const page = await getPageData('page', '404')
+        return {
+            props: {
+                seo: {
+                    title: page?.body?.seo?.title,
+                    description: page?.body?.seo?.description,
+                    noIndex: page?.body?.seo?.no_index
+                },
+                body: page?.body,
+                notFound: true
             }
         }
-    };
+    }
 };
 
 export default CatchAllCategoryPage
