@@ -41,7 +41,6 @@ export const getServerSideProps = async (context) => {
         'preview': context?.query?.preview === '1' ? 1 : 0
     }
     let page = await getPageData('category_page', context?.query?.category, params);
-    console.log('context?.query?.category', context?.query?.category)
     const response = await axios.get('https://buttercms-acme-products.vercel.app/api/categories/' + context?.query?.category)
     if (page && response) {
         return {
