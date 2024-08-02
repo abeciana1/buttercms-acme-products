@@ -7,7 +7,7 @@ import { slugify } from '@/lib/helper-functions'
 const ProductCard = ({ product }) => {
     const productLink = `/p/${slugify(product.name)}`
     return (
-        <div className='bg-white rounded-lg shadow-md max-w-72 w-full sm:max-w-96 text-center p-5 flex items-end h-44 sm:h-48 relative'>
+        <div className='bg-white border-2 border-slate-400 rounded-lg shadow-md max-w-72 w-full sm:max-w-96 text-center p-5 flex items-end h-44 sm:h-48 relative'>
             <div className="flex items-center sm:items-end gap-2.5">
                 <Link href={productLink} title={product.name}>
                     <div className="relative h-32 w-24 sm:h-36 md:w-36">
