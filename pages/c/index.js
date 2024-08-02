@@ -40,9 +40,10 @@ export const getServerSideProps = async (context) => {
     const params = {
         'preview': context?.query?.preview === '1' ? 1 : 0
     }
-    try {
-        let page = await getPageData('category_page', context?.query?.category, params);
-        const response = await axios.get('/api/categories/' + context?.query?.category)
+    let page = await getPageData('category_page', context?.query?.category, params);
+    console.log('context?.query?.category', context?.query?.category)
+    const response = await axios.get('https://buttercms-acme-products.vercel.app/api/categories/' + context?.query?.category)
+    if (page && response) {
         return {
             props: {
                 seo: {
@@ -57,8 +58,8 @@ export const getServerSideProps = async (context) => {
                 notFound: false
             }
         };
-    } catch (error) {
-        const page = await getPageData('page', '404', params)
+    } else {
+        let page = await getPageData('page', '404', params)
         return {
             props: {
                 seo: {
@@ -71,6 +72,9 @@ export const getServerSideProps = async (context) => {
             }
         }
     }
+    // }
+    // try {
+    // } catch (error) {
 };
 
 export default CatchAllCategoryPage

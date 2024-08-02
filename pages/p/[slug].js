@@ -261,7 +261,7 @@ export const getServerSideProps = async (context) => {
     }
     try {
         let page = await getPageData('product_detail', context?.query?.slug, params);
-        let product = await axios.get('https://buttercms-acme-products-uevi.vercel.app/api/products/' + page?.body?.product_sku)
+        let product = await axios.get('https://buttercms-acme-products.vercel.app/api/products/' + page?.body?.product_sku)
         return {
             props: {
                 seo: {
