@@ -31,7 +31,8 @@ body {
   font-style: normal;
   color: #374151;
   overflow-x: hidden;
-  @apply bg-yellow-50;
+  @apply bg-white;
+  /* @apply bg-yellow-50; */
   max-width: 1440px;
   margin: 0 auto;
 }
