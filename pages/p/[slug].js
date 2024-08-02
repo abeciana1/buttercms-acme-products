@@ -11,7 +11,6 @@ import cx from 'classnames'
 import { GoAlertFill } from "react-icons/go";
 import ATCForm from '@/components/_forms/ATCForm'
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
-import Accordion from '@/components/_page-sections/Accordion'
 import ProductCarousel from '@/components/_page-sections/ProductCarousel'
 import { slugify } from '@/lib/helper-functions'
 import ComponentRenderer from '@/components/ComponentRenderer'
@@ -22,6 +21,7 @@ const CatchAllProductPage = ({
     product,
     notFound
 }) => {
+    console.log('body', body)
     const { isDesktop, isTablet, isMobile } = useResponsiveness() || {}
     const [ startIdx , setStartIdx ] = useState(0)
     const [ endIdx, setEndIdx ] = useState(1)
@@ -207,31 +207,13 @@ const CatchAllProductPage = ({
                         <section className="md:py-10 lg:py-20">
                             <h2 className="font-optiscript text-center">{body?.body?.headline}</h2>
                             <h2 className="sr-only">{body?.body?.headline}</h2>
-                            <Accordion
-                                title="Description"
-                                content={body?.body?.description}
-                            />
-                            {body?.body?.additional_description &&
-                                <Accordion
-                                    title="Additional Information"
-                                    content={body?.body?.additional_description}
+                            {body?.body?.body?.map(({ type, fields: sectionData}, index) => {
+                                return <ComponentRenderer
+                                    key={type + index}
+                                    type={type}
+                                    sectionData={sectionData}
                                 />
-                            }
-                            {body?.body?.warning &&
-                                <div className="flex items-center justify-center py-3 text-2xl">
-                                    <div className="text-altRed pr-1">
-                                        <GoAlertFill size={30} />
-                                    </div>
-                                    <div>
-                                        <span className="font-bold">Warning: </span>
-                                        {body?.body?.warning}
-                                    </div>
-                                </div>
-                            }
-                            <ProductCarousel
-                                carouselTitle={body?.body?.product_carousel_title}
-                                dataEndpoint={`${slugifiedCategoryName}-products`}
-                            />
+                            })}
                         </section>
                     </PageLayoutWrapper>
                 </>
