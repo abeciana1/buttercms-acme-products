@@ -1,13 +1,11 @@
+import parse from 'html-react-parser';
+
 const TextContent = ({
     text
 }) => {
     return (
         <section>
-            <div
-                dangerouslySetInnerHTML={{
-                    __html: text
-                }}
-            />
+            {parse(text)}
         </section>
     )
 }
