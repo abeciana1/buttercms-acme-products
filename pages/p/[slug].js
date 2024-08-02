@@ -21,7 +21,6 @@ const CatchAllProductPage = ({
     product,
     notFound
 }) => {
-    console.log('seo', seo)
     const { isDesktop, isTablet, isMobile } = useResponsiveness() || {}
     const [ startIdx , setStartIdx ] = useState(0)
     const [ endIdx, setEndIdx ] = useState(1)
