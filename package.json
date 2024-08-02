@@ -23,6 +23,7 @@
     "date-fns": "^2.29.3",
     "dotenv": "^16.4.5",
     "hamburger-react": "^2.5.1",
+    "html-react-parser": "^5.1.12",
     "js-cookie": "^3.0.5",
     "next": "^13.1.5",
     "next-seo": "^6.5.0",
