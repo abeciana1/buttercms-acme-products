@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+import parse from 'html-react-parser';
 
 const Accordion = ({ title, content }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -29,7 +30,7 @@ const Accordion = ({ title, content }) => {
                 }`}
                 aria-hidden={!isOpen}
             >
-                <div className="py-4">{content}</div>
+                <div className="py-4">{parse(content)}</div>
             </div>
         </div>
     );
