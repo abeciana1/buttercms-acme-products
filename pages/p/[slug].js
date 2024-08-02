@@ -21,7 +21,7 @@ const CatchAllProductPage = ({
     product,
     notFound
 }) => {
-    console.log('body', body)
+    console.log('seo', seo)
     const { isDesktop, isTablet, isMobile } = useResponsiveness() || {}
     const [ startIdx , setStartIdx ] = useState(0)
     const [ endIdx, setEndIdx ] = useState(1)
@@ -68,25 +68,27 @@ const CatchAllProductPage = ({
             />
             {!notFound &&
                 <>
-                    <ProductJsonLd
-                        productName={body?.product_name}
-                        images={productImages}
-                        description={seo?.description}
-                        brand="ACME"
-                        manufacturerName="ACME"
-                        manufacturerLogo="https://cdn.buttercms.com/2QarXXoQ8eIiLEYOD2z3"
-                        disambiguatingDescription={body?.headline}
-                        mpn={body?.product_sku}
-                        offers={[
-                            {
-                                price: `$${(product?.discount > 0) ? product?.discountPrice : product?.price}`,
-                                availability: 'https://schema.org/InStock',
-                                priceCurrency: 'USD',
-                                itemCondition: 'https://schema.org/NewCondition',
-                                // url: 'https://www.example.com/executive-anvil',
-                            }
-                        ]}
-                    />
+                    {seo?.jsonLDSchema === 'product' &&
+                        <ProductJsonLd
+                            productName={body?.product_name}
+                            images={productImages}
+                            description={seo?.description}
+                            brand="ACME"
+                            manufacturerName="ACME"
+                            manufacturerLogo="https://cdn.buttercms.com/2QarXXoQ8eIiLEYOD2z3"
+                            disambiguatingDescription={body?.headline}
+                            mpn={body?.product_sku}
+                            offers={[
+                                {
+                                    price: `$${(product?.discount > 0) ? product?.discountPrice : product?.price}`,
+                                    availability: 'https://schema.org/InStock',
+                                    priceCurrency: 'USD',
+                                    itemCondition: 'https://schema.org/NewCondition',
+                                    // url: 'https://www.example.com/executive-anvil',
+                                }
+                            ]}
+                        />
+                    }
                     <PageLayoutWrapper>
                         <Breadcrumbs
                             categoryName={body?.body?.category?.category_name}
