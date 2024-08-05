@@ -79,6 +79,7 @@ const BannerProductSpotlight = ({
     showSecondCta,
     secondCtaHref
 }) => {
+    console.log('spotlightProductSku', spotlightProductSku)
     const [ isLoading, setIsLoading ] = useState(false)
     const [ product, setProduct] = useState(null)
 
@@ -86,7 +87,7 @@ const BannerProductSpotlight = ({
         const fetchProductData = async () => {
             setIsLoading(true)
             try {
-                const { data: response } = await axios.get(`/api/products/${spotlightProductSku}`)
+                const { data: response } = await axios.get(`/api/products/${spotlightProductSku.product_sku}`)
                 setProduct(response)
             } catch (error) {
                 console.error('Error fetching product:', error)
