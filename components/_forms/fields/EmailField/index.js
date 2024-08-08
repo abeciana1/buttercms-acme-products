@@ -1,4 +1,5 @@
 import { ErrorMessage } from "@hookform/error-message"
+import { checkValidEmailPattern, createPattern, createPatternMessage } from '@/lib/helper-functions'
 
 const EmailField = ({
     id,
@@ -6,11 +7,11 @@ const EmailField = ({
     name,
     required,
     validationError,
-    minNumber,
-    maxNumber,
     register,
     errors
 }) => {
+    const isEmail = checkValidEmailPattern()
+    
     return (
         <>
             <label htmlFor={`${name}-${id}`}>{label}{(validationError || required) ? '*' : ''}</label>
@@ -21,7 +22,11 @@ const EmailField = ({
                 aria-label={label}
                 className='border-2 border-altBlack rounded-lg py-0.5 px-1'
                 {...register(name, {
-                    required: required ? { value: true, message: validationError || "This field is required" } : { value: false }
+                    required: required ? { value: true, message: validationError || "A valid email is required" } : { value: false },
+                    pattern: {
+                        value: isEmail,
+                        message: "Please enter a valid email address"
+                    }
                 })}
             />
             <ErrorMessage
