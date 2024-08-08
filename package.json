@@ -9,6 +9,7 @@
     "seed": "node prisma/seed.js"
   },
   "dependencies": {
+    "@hookform/error-message": "^2.0.1",
     "@popperjs/core": "^2.11.6",
     "@prisma/client": "^5.17.0",
     "@reduxjs/toolkit": "^2.2.6",
