@@ -72,6 +72,8 @@ const Form = ({ form }) => {
                                 validationError: field?.validation_error_message,
                                 minNumber: field?.min_number_value,
                                 maxNumber: field?.max_number_value,
+                                allowNumbers: field?.allow_numbers,
+                                allowSpecialChars: field?.allow_special_symbols
                             }}
                             errors={errors}
                             register={register}
