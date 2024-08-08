@@ -1,0 +1,95 @@
+import { useForm } from "react-hook-form";
+import dynamic from "next/dynamic"
+import { toPascalCase } from "@/lib/helper-functions"
+import MissingField from '@/components/_forms/fields/MissingField'
+import camelcaseKeys from 'camelcase-keys';
+import Preloader from '@/components/Preloader'
+import { slugify } from '@/lib/helper-functions'
+import cx from 'classnames'
+import SubmitButton from '@/components/_inputs/Buttons/SubmitButton'
+import parse from 'html-react-parser';
+import { useMemo } from 'react'
+
+const FormFieldRenderer = ({type, fieldData, register, errors}) => {
+
+
+    const fieldComponentPaths = useMemo(() => ({
+		[type]: dynamic(
+			() => import(`@/components/_forms/fields/${type}Field`)
+				.catch(() => () => MissingField), {
+			loading: Preloader,
+            ssr: true
+		})
+	}), [type]);
+	const FieldComponent = fieldComponentPaths[type] || MissingField;
+
+	return <FieldComponent
+        key={fieldData?.id}
+        type={type}
+        {...camelcaseKeys(fieldData)}
+        register={register}
+        errors={errors}
+        />
+}
+
+const Form = ({ form }) => {
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+        reset
+    } = useForm();
+
+    const onSubmit = (data) => {
+        console.log('submitting form')
+        console.log('data', data)
+        reset()
+    }
+
+    return (
+        <form
+            onSubmit={handleSubmit(onSubmit)}
+            className={cx('', {
+                ['bg-skyBlue']: form?.backgroundColor === 'Sky Blue',
+                ['bg-yellow-50']: form?.backgroundColor === 'Yellow',
+                ['bg-white']: form?.backgroundColor === 'White'
+            })}
+        >
+            <div className='mb-3'>{form?.text && parse(form?.text)}</div>
+            {form?.fields?.map((field, index) => {
+                return (
+                    <div
+                        key={field?.input_type + index}
+                        className='pb-3 flex flex-col'>
+                        <FormFieldRenderer
+                            id={field?.meta?.id}
+                            type={toPascalCase(field?.input_type)}
+                            fieldData={{
+                                id: field?.meta?.id,
+                                label: field?.field_label,
+                                name: slugify(field?.field_name),
+                                required: field?.required,
+                                validationError: field?.validation_error_message,
+                                minNumber: field?.min_number_value,
+                                maxNumber: field?.max_number_value,
+                            }}
+                            errors={errors}
+                            register={register}
+                            // {register(slugify(field?.field_name), {
+                            //     required: field?.required && field?.validation_error_message,
+                            //     min: field?.min_number_value,
+                            //     max: field?.max_number_value,
+                            // })}
+                        />
+                    </div>
+                )
+            })}
+            <SubmitButton
+                color={form?.buttonColor?.brand_color}
+                submitText={form?.submitText}
+            />
+        </form>
+    )
+}
+
+export default Form;
