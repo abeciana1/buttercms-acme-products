@@ -1,4 +1,5 @@
 import { ErrorMessage } from "@hookform/error-message"
+import { createPattern, createPatternMessage } from '@/lib/helper-functions'
 
 const TextField = ({
     id,
@@ -9,8 +10,13 @@ const TextField = ({
     minNumber,
     maxNumber,
     register,
-    errors
+    errors,
+    allowNumbers = false,
+    allowSpecialChars = false
 }) => {
+    const pattern = createPattern(allowNumbers, allowSpecialChars);
+    const patternMessage = createPatternMessage(allowNumbers, allowSpecialChars);
+
     return (
         <>
             <label htmlFor={`${name}-${id}`}>{label}{(validationError || required) ? '*' : ''}</label>
@@ -21,7 +27,11 @@ const TextField = ({
                 aria-label={label}
                 className='border-2 border-altBlack rounded-lg py-0.5 px-1'
                 {...register(name, {
-                    required: required ? { value: true, message: validationError || "This field is required" } : { value: false }
+                    required: required ? { value: true, message: validationError || "This field is required" } : { value: false },
+                    pattern: {
+                        value: pattern,
+                        message: patternMessage
+                    }
                 })}
             />
             <ErrorMessage
