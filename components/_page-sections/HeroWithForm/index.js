@@ -24,7 +24,7 @@ const HeroWithForm = ({
     }, [])
 
     return(
-        <section className="flex gap-5">
+        <section className="flex gap-5 items-center">
             <section className="px-5 md:px-10 py-5 md:py-10">
                 {image &&
                     <div className="relative h-44 w-56 sm:h-44 md:w-56">
