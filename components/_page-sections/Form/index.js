@@ -75,11 +75,6 @@ const Form = ({ form }) => {
                             }}
                             errors={errors}
                             register={register}
-                            // {register(slugify(field?.field_name), {
-                            //     required: field?.required && field?.validation_error_message,
-                            //     min: field?.min_number_value,
-                            //     max: field?.max_number_value,
-                            // })}
                         />
                     </div>
                 )
