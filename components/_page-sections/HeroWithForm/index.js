@@ -50,7 +50,7 @@ const HeroWithForm = ({
                 }
             </section>
             <section className="px-5 md:px-10 py-5 md:py-10">
-                <Form form={form} />
+                <Form key={form?.name} form={form} />
             </section>
         </section>
     )
