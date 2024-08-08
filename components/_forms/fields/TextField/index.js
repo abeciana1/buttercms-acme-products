@@ -12,13 +12,6 @@ const TextField = ({
     register,
     errors
 }) => {
-    // const memoizedErrorMessage = useMemo(() => (
-    //     <ErrorMessage
-    //         errors={errors}
-    //         name={name}
-    //         render={({ message }) => <p className='text-altRed'>{message}</p>}
-    //     />
-    // ), [errors, name]);
     return (
         <>
             <label htmlFor={`${name}-${id}`}>{label}{(validationError || required) ? '*' : ''}</label>
