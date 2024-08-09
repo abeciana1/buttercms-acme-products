@@ -3,6 +3,7 @@ import { getForm } from '@/lib/api'
 import Image from 'next/image'
 import { LinkLookLikeButton } from '@/components/_inputs/Links'
 import Form from '@/components/_page-sections/Form'
+import cx from 'classnames'
 
 const HeroWithForm = ({
     heading,
@@ -13,7 +14,7 @@ const HeroWithForm = ({
     image,
 }) => {
     const [ form, setForm ] = useState(null)
-
+    console.log(form)
     useEffect(() => {
         const setFormObj = async () => {
             let formObj = await getForm()
@@ -48,7 +49,12 @@ const HeroWithForm = ({
                     </div>
                 }
             </section>
-            <section className="px-5 md:px-10 py-5 md:py-10">
+            <section
+                className={cx("px-5 md:px-10 py-5 md:py-10 rounded-lg", {
+                    ['bg-skyBlue']: form?.backgroundColor?.brand_color === 'Sky Blue',
+                    ['bg-white']: form?.backgroundColor?.brand_color === 'White'
+                })}
+            >
                 <Form key={form?.name} form={form} />
             </section>
         </section>
