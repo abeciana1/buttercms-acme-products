@@ -49,7 +49,7 @@ const Form = ({ form }) => {
     return (
         <form
             onSubmit={handleSubmit(onSubmit)}
-            className={cx('', {
+            className={cx('flex flex-col items-center justify-center', {
                 ['bg-skyBlue']: form?.backgroundColor === 'Sky Blue',
                 ['bg-yellow-50']: form?.backgroundColor === 'Yellow',
                 ['bg-white']: form?.backgroundColor === 'White'
