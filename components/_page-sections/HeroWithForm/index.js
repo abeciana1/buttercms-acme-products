@@ -1,5 +1,4 @@
-import { useMemo, useEffect, useState } from 'react'
-import axios from 'axios'
+import { useEffect, useState } from 'react'
 import { getForm } from '@/lib/api'
 import Image from 'next/image'
 import { LinkLookLikeButton } from '@/components/_inputs/Links'
