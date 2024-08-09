@@ -23,7 +23,7 @@ const HeroWithForm = ({
     }, [])
 
     return(
-        <section className="flex gap-5 items-center">
+        <section className="flex flex-col md:flex-row items-center md:gap-10 justify-center">
             <section className="px-5 md:px-10 py-5 md:py-10">
                 {image &&
                     <div className="relative h-44 w-56 sm:h-44 md:w-56">
