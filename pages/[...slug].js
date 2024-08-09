@@ -29,7 +29,8 @@ export default DynamicPage
 
 export const getServerSideProps = async (context) => {
     const params = {
-        'preview': context?.query?.preview === '1' ? 1 : 0
+        'preview': context?.query?.preview === '1' ? 1 : 0,
+        'levels': 3
     }
     try {
         let path = context?.query?.slug
