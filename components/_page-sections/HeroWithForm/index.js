@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react'
-import { getForm } from '@/lib/api'
 import Image from 'next/image'
 import { LinkLookLikeButton } from '@/components/_inputs/Links'
 import Form from '@/components/_page-sections/Form'
@@ -12,17 +10,8 @@ const HeroWithForm = ({
     ctaButtonText,
     ctaButtonColor,
     image,
+    form
 }) => {
-    const [ form, setForm ] = useState(null)
-    console.log(form)
-    useEffect(() => {
-        const setFormObj = async () => {
-            let formObj = await getForm()
-            setForm(formObj)
-        }
-        setFormObj()
-    }, [])
-
     return(
         <section className="flex flex-col md:flex-row items-center md:gap-10 justify-center">
             <section className="px-5 md:px-10 py-5 md:py-10">
