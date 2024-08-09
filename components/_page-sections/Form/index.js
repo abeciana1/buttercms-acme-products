@@ -55,7 +55,7 @@ const Form = ({ form }) => {
                 ['bg-white']: form?.backgroundColor === 'White'
             })}
         >
-            <div className='mb-3'>{form?.text && parse(form?.text)}</div>
+            <div className='mb-3'>{form?.form_text && parse(form?.form_text)}</div>
             {form?.fields?.map((field, index) => {
                 return (
                     <div
@@ -82,8 +82,8 @@ const Form = ({ form }) => {
                 )
             })}
             <SubmitButton
-                color={form?.buttonColor?.brand_color}
-                submitText={form?.submitText}
+                color={form?.submit_button_color?.brand_color}
+                submitText={form?.submit_button_text}
             />
         </form>
     )
