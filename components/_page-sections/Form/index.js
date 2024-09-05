@@ -11,6 +11,8 @@ import parse from 'html-react-parser';
 import { useMemo } from 'react'
 
 const FormFieldRenderer = ({type, fieldData, register, errors}) => {
+
+
     const fieldComponentPaths = useMemo(() => ({
 		[type]: dynamic(
 			() => import(`@/components/_forms/fields/${type}Field`)

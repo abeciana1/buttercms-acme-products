@@ -7,6 +7,8 @@ const TextField = ({
     name,
     required,
     validationError,
+    minNumber,
+    maxNumber,
     register,
     errors,
     allowNumbers = false,
