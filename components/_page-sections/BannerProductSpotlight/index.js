@@ -79,7 +79,6 @@ const BannerProductSpotlight = ({
     showSecondCta,
     secondCtaHref
 }) => {
-    console.log('spotlightProductSku', spotlightProductSku)
     const [ isLoading, setIsLoading ] = useState(false)
     const [ product, setProduct] = useState(null)
 
