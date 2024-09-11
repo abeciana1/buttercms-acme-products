@@ -4,13 +4,16 @@ import Preloader from '@/components/Preloader'
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import ProductCard from '@/components/_products/ProductCard'
 
-const AdhocProductCarousel = () => {
+const AdhocProductCarousel = ({
+    productCarouseTitle,
+    productList
+}) => {
     const getSlidesPerPage = () => {
         if (typeof window !== 'undefined') {
             if (window.innerWidth >= 1050) {
-                return 3; // 3 slides per page on larger screens
+                return productList?.length > 2 ? 3 : productList?.length;
             } else if (window.innerWidth >= 640) {
-                return 2; // 2 slides per page on medium screens
+                return productList?.length > 1 ? 2 : productList?.length;
             } else {
                 return 1; // 1 slide per page on small screens
             }
@@ -22,35 +25,20 @@ const AdhocProductCarousel = () => {
     const [ isLoading, setIsLoading ] = useState(false)
     const [ slidesPerPage, setSlidesPerPage ] = useState(getSlidesPerPage())
     const [ startIdx , setStartIdx ] = useState(0)
-    const [ paginationEnabled, setPaginationEnabled ] = useState(enablePaginationControls())
-
-    const enablePaginationControls = () => {
-        if (products.length < 2) {
-            return false;
-        } else if ((products.length === 2) && (window.innerWidth >= 640)) {
-            return false
-        } else if ((products.length === 2) && (window.innerWidth < 639)) {
-            return true
-        } else if ((products.length === 3) && (window.innerWidth >= 1050)) {
-            return false
-        } else if ((products.length === 3) && (window.innerWidth < 1050)) {
-            return true
-        } else {
-            return true
-        }
-    }
 
     useEffect(() => {
         setSlidesPerPage(getSlidesPerPage());
         setStartIdx(0);
-        setPaginationEnabled(enablePaginationControls())
     }, [])
 
     useEffect(() => {
         const fetchProductData = async () => {
             setIsLoading(true)
-            try{
-                const { data: response } = await axios.get('/api/' + dataEndpoint)
+            try {
+                const { data: response } = await axios.post('/api/adhoc-products', {
+                    data: productList
+                })
+                console.log('response', response)
                 setProducts(response)
             } catch (error) {
                 console.error('Error fetching products:', error)
@@ -63,7 +51,7 @@ const AdhocProductCarousel = () => {
     useEffect(() => {
         const adjustSlidesPerPage = () => {
             setSlidesPerPage(getSlidesPerPage());
-            setPaginationEnabled(enablePaginationControls())
+            setStartIdx(0)
         }
 
         if (window) {
@@ -92,11 +80,11 @@ const AdhocProductCarousel = () => {
 
     return (
         <section className='relative pt-10 md:pt-20'>
-            <div className='sr-only'>{carouselTitle}</div>
+            <div className='sr-only'>{productCarouseTitle}</div>
             <h2
                 className='font-optiscript'
-            >{carouselTitle}</h2>
-            {paginationEnabled &&
+            >{productCarouseTitle}</h2>
+            {(products.length > slidesPerPage) &&
                 <div className='pt-5 flex gap-10'>
                     <button onClick={prevSlide} className="z-10 bg-gray-700 text-white p-2 rounded-full">
                         <FaArrowLeft size={30} />
