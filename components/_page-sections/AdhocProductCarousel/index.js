@@ -38,7 +38,6 @@ const AdhocProductCarousel = ({
                 const { data: response } = await axios.post('/api/adhoc-products', {
                     data: productList
                 })
-                console.log('response', response)
                 setProducts(response)
             } catch (error) {
                 console.error('Error fetching products:', error)
