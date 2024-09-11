@@ -5,7 +5,6 @@ const handler = async (req, res) => {
     await runMiddleware(req, res)
     if (req.method === 'POST') {
         let cleanedProductList = req.body.data?.map(product => product.product_sku)
-        console.log('cleanedProductList', cleanedProductList)
         const products = await prisma.product.findMany({
             where: {
                 sku: {
