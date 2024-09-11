@@ -96,14 +96,16 @@ const AdhocProductCarousel = () => {
             <h2
                 className='font-optiscript'
             >{carouselTitle}</h2>
-            <div className='pt-5 flex gap-10'>
-                <button onClick={prevSlide} className="z-10 bg-gray-700 text-white p-2 rounded-full">
-                    <FaArrowLeft size={30} />
-                </button>
-                <button onClick={nextSlide} className="z-10 bg-gray-700 text-white p-2 rounded-full">
-                    <FaArrowRight size={30} />
-                </button>
-            </div>
+            {paginationEnabled &&
+                <div className='pt-5 flex gap-10'>
+                    <button onClick={prevSlide} className="z-10 bg-gray-700 text-white p-2 rounded-full">
+                        <FaArrowLeft size={30} />
+                    </button>
+                    <button onClick={nextSlide} className="z-10 bg-gray-700 text-white p-2 rounded-full">
+                        <FaArrowRight size={30} />
+                    </button>
+                </div>
+            }
             <section className='pt-5'>
                 {isLoading && <Preloader />}
                 {((products && !isLoading) && products.length > 0) &&
