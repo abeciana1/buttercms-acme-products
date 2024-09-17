@@ -50,6 +50,7 @@ const Personalize = () => {
             />
             <PageLayoutWrapper>
                 <h1>Personalization content powered by Butter</h1>
+                <div>You are currently using {(!coyotePersona && !roadrunnerPersona) ? <b>no</b> : 'the '}{coyotePersona && <b>Coyote</b>}{roadrunnerPersona && <b>Roadrunner</b>} persona</div>
                 <section className='py-10'>
                     <h2>Personalization on a user level</h2>
                     <div className='space-y-5 max-w-fit'>
