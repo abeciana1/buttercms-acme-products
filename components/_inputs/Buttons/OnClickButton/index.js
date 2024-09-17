@@ -1,7 +1,9 @@
+import cx from 'classnames'
 
 const OnClickButton = ({
     buttonText,
     onClick,
+    color
 }) => {
     return (
         <button
