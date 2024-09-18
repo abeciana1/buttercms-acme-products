@@ -14,7 +14,7 @@ const ComponentRenderer = ({ type, sectionData, products = [] }) => {
 		})
 	});
 	const SectionComponent = sectionsComponentPaths()[type] || MissingSection;
-	return <SectionComponent type={type} {...camelcaseKeys(sectionData)} products={products} />
+	return <SectionComponent key={type+Date.now()} type={type} {...camelcaseKeys(sectionData)} products={products} />
 }
 
 export default ComponentRenderer
