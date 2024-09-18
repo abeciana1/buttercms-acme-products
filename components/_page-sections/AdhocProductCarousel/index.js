@@ -37,15 +37,21 @@ const AdhocProductCarousel = ({
             try {
                 const { data: response } = await axios.post('/api/adhoc-products', {
                     data: productList
-                })
-                setProducts(response)
+                });
+                if (Array.isArray(response)) {
+                    setProducts(response);
+                } else {
+                    console.error('Expected an array, received:', response);
+                }
             } catch (error) {
-                console.error('Error fetching products:', error)
+                console.error('Error fetching products:', error);
+            } finally {
+                setIsLoading(false);
             }
-            setIsLoading(false)
-        }
-        fetchProductData()
-    }, [])
+        };
+    
+        fetchProductData();
+    }, [productList]);
 
     useEffect(() => {
         const adjustSlidesPerPage = () => {
@@ -95,7 +101,7 @@ const AdhocProductCarousel = ({
             }
             <section className='pt-5'>
                 {isLoading && <Preloader />}
-                {((products && !isLoading) && products.length > 0) &&
+                {(!isLoading && products.length > 0) &&
                     <section className='flex gap-5 justify-center'>
                         {Array(slidesPerPage).fill().map((_, i) => {
                             const productIdx = (startIdx + i) % products.length;
