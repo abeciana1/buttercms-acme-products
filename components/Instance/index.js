@@ -40,8 +40,10 @@ const Instance = () => {
 
     useEffect(() => {
         // if (document.referrer !== window?.location?.origin && !Cookies.get('on-first-entry')) {
-            // }
+        // }
+        if (!Cookies.get('on-first-entry')) {
             Cookies.set('on-first-entry', 'true')
+        }
         if (Cookies.get('on-first-entry') === 'true') {
             const getOnFirstEntryModal = async () => {
                 const modalContent = await getModalContent('on-first-entry')
