@@ -9,10 +9,10 @@ import cx from 'classnames'
 import SubmitButton from '@/components/_inputs/Buttons/SubmitButton'
 import parse from 'html-react-parser';
 import { useMemo } from 'react'
+import { useDispatch } from "react-redux";
+import { clearInstance } from '@/redux/slices/instanceSlice'
 
 const FormFieldRenderer = ({type, fieldData, register, errors}) => {
-
-
     const fieldComponentPaths = useMemo(() => ({
 		[type]: dynamic(
 			() => import(`@/components/_forms/fields/${type}Field`)
@@ -31,7 +31,8 @@ const FormFieldRenderer = ({type, fieldData, register, errors}) => {
         />
 }
 
-const Form = ({ form }) => {
+const Form = ({ form, onModal = false }) => {
+    const dispatch = useDispatch();
     const {
         register,
         handleSubmit,
@@ -42,6 +43,9 @@ const Form = ({ form }) => {
     const onSubmit = (data) => {
         console.log('submitting form')
         console.log('data', data)
+        if (onModal) {
+            dispatch(clearInstance())
+        }
         reset()
     }
 
