@@ -86,7 +86,7 @@ const Personalize = () => {
                     <h2>Promotional popups</h2>
                     <div className='pt-5 max-w-fit'>
                         <OnClickButton
-                            buttonText='Demo promotional popup'
+                            buttonText='Demo promo popup'
                             color='Red'
                             onClick={renderDemoPopupContent}
                         />
