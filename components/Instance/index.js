@@ -42,7 +42,7 @@ const Instance = () => {
         // if (document.referrer !== window?.location?.origin && !Cookies.get('on-first-entry')) {
         // }
         if (!Cookies.get('on-first-entry')) {
-            Cookies.set('on-first-entry', 'true')
+            Cookies.set('on-first-entry', 'true', { expires: 1 })
         }
         if (Cookies.get('on-first-entry') === 'true') {
             const getOnFirstEntryModal = async () => {
