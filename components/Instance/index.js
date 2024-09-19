@@ -33,7 +33,7 @@ const Instance = () => {
 
     const closeModal = () => {
         if (Cookies.get('on-first-entry') === 'true') {
-            Cookies.remove('on-first-entry', 'false')
+            Cookies.set('on-first-entry', 'false', { expires: 1})
         }
         dispatch(clearInstance())
     }
