@@ -23,7 +23,7 @@ const PromoPopup = ({ data }) => {
         <section className='max-w-md space-y-5'>
             {parse(text_content)}
             {popupForm &&
-                <Form key={form?.name} form={popupForm} />
+                <Form key={form?.name} form={popupForm} onModal />
             }
         </section>
     )
