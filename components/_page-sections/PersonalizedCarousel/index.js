@@ -13,7 +13,6 @@ const PersonalizedCarousel = ({ heading, persona }) => {
         const fetchPersonalizedProducts = async () => {
             try {
                 const response = await getPersonalizedProducts(cookie_target)
-                console.log('Fetched products:', response) // Debug log
                 setProducts(response)
             } catch (error) {
                 console.error('Error fetching personalized products:', error)
@@ -24,9 +23,6 @@ const PersonalizedCarousel = ({ heading, persona }) => {
 
         fetchPersonalizedProducts()
     }, [cookie_target])
-
-    console.log('11 Products state:', products) // Debug log
-    console.log('11 Loading state:', loading) // Debug log
 
     return (
         <>
