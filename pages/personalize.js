@@ -3,9 +3,12 @@ import { NextSeo } from 'next-seo'
 import { PageLayoutWrapper } from '@/components/_layouts'
 import OnClickButton from '@/components/_inputs/Buttons/OnClickButton'
 import Cookies from 'js-cookie'
-
+import { getModalContent } from '@/lib/api'
+import { useDispatch } from 'react-redux'
+import { setInstance } from '@/redux/slices/instanceSlice'
 
 const Personalize = () => {
+    const dispatch = useDispatch()
     const [ coyotePersona, setCoyotePersona ] = useState(Cookies.get('coyote-promo') ? true : false)
     const [ roadrunnerPersona, setRoadrunnerPersona ] = useState(Cookies.get('roadrunner-promo') ? true : false)
     console.log('Coyote cookies', Cookies.get('coyote-promo'))
@@ -40,6 +43,19 @@ const Personalize = () => {
         }
     }
 
+    const renderDemoPopupContent = async () => {
+        const data = await getModalContent('anvils-sept-2024-sale')
+        const today = new Date();
+        const startDate = new Date(data.start_date)
+        const endDate = new Date(data.end_date)
+        if (today >= startDate && today <= endDate) {
+            dispatch(setInstance({
+                name: 'promo-popup',
+                data: data,
+            }))
+        }
+    }
+
     return (
         <>
             <NextSeo
@@ -68,6 +84,13 @@ const Personalize = () => {
                 </section>
                 <section>
                     <h2>Promotional popups</h2>
+                    <div className='pt-5 max-w-fit'>
+                        <OnClickButton
+                            buttonText='Demo promotional popup'
+                            color='Red'
+                            onClick={renderDemoPopupContent}
+                        />
+                    </div>
                 </section>
             </PageLayoutWrapper>
         </>
