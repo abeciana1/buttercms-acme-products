@@ -9,35 +9,35 @@ import { setInstance } from '@/redux/slices/instanceSlice'
 
 const Personalize = () => {
     const dispatch = useDispatch()
-    const [ coyotePersona, setCoyotePersona ] = useState(Cookies.get('coyote-promo') ? true : false)
-    const [ roadrunnerPersona, setRoadrunnerPersona ] = useState(Cookies.get('roadrunner-promo') ? true : false)
-    console.log('Coyote cookies', Cookies.get('coyote-promo'))
-    console.log('Roadrunner cookies', Cookies.get('roadrunner-promo'))
+    const [ coyotePersona, setCoyotePersona ] = useState(Cookies.get('coyote') ? true : false)
+    const [ roadrunnerPersona, setRoadrunnerPersona ] = useState(Cookies.get('roadrunner') ? true : false)
+    console.log('Coyote cookies', Cookies.get('coyote'))
+    console.log('Roadrunner cookies', Cookies.get('roadrunner'))
 
     // Personalization functions
     const setPersonaCookie = (persona) => {
         if (persona === 'coyote') {
-            if (Cookies.get('roadrunner-promo')) {
-                Cookies.remove('roadrunner-promo')
+            if (Cookies.get('roadrunner')) {
+                Cookies.remove('roadrunner')
                 setRoadrunnerPersona(false)
             }
-            if (Cookies.get('coyote-promo')) {
-                Cookies.remove('coyote-promo')
+            if (Cookies.get('coyote')) {
+                Cookies.remove('coyote')
                 setCoyotePersona(false)
             } else {
-                Cookies.set('coyote-promo', 'true', { expires: 1 })
+                Cookies.set('coyote', 'true', { expires: 1 })
                 setCoyotePersona(true)
             }
         } else {
-            if (Cookies.get('coyote-promo')) {
-                Cookies.remove('coyote-promo')
+            if (Cookies.get('coyote')) {
+                Cookies.remove('coyote')
                 setCoyotePersona(false)
             }
-            if (Cookies.get('roadrunner-promo')) {
-                Cookies.remove('roadrunner-promo')
+            if (Cookies.get('roadrunner')) {
+                Cookies.remove('roadrunner')
                 setRoadrunnerPersona(false)
             } else {
-                Cookies.set('roadrunner-promo', 'true', { expires: 1 })
+                Cookies.set('roadrunner', 'true', { expires: 1 })
                 setRoadrunnerPersona(true)
             }
         }
