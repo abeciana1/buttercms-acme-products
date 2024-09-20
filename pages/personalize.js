@@ -25,7 +25,7 @@ const Personalize = () => {
                 Cookies.remove('coyote-promo')
                 setCoyotePersona(false)
             } else {
-                Cookies.set('coyote-promo', true, { expires: 1 })
+                Cookies.set('coyote-promo', 'true', { expires: 1 })
                 setCoyotePersona(true)
             }
         } else {
@@ -37,7 +37,7 @@ const Personalize = () => {
                 Cookies.remove('roadrunner-promo')
                 setRoadrunnerPersona(false)
             } else {
-                Cookies.set('roadrunner-promo', true, { expires: 1 })
+                Cookies.set('roadrunner-promo', 'true', { expires: 1 })
                 setRoadrunnerPersona(true)
             }
         }
