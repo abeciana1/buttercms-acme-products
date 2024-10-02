@@ -17,7 +17,6 @@ const PersonalizedCarousel = ({ heading, persona }) => {
                 try {
                     const response = await getPersonalizedProducts(cookie_target);
                     setMappedProducts(response); 
-                    console.log('Personalized products:', response);
                 } catch (error) {
                     console.error('Error fetching personalized products:', error);
                 } finally {
@@ -109,7 +108,6 @@ const PersonalizedCarousel = ({ heading, persona }) => {
                                         {Array(slidesPerPage)
                                             .fill()
                                             .map((_, i) => {
-                                                console.log('testing mapping')
                                                 const productIdx =
                                                     (startIdx + i) % mappedProducts?.length;
                                                 return (
