@@ -1,9 +1,8 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import parse from 'html-react-parser';
 
 const Accordion = ({ title, content }) => {
     const [isOpen, setIsOpen] = useState(false);
-    const contentRef = useRef(null);
 
     const toggleAccordion = () => {
         setIsOpen(!isOpen);
@@ -24,7 +23,6 @@ const Accordion = ({ title, content }) => {
             </button>
             <div
                 id={`accordion-content-${title}`}
-                ref={contentRef}
                 className={`overflow-hidden transition-all duration-300 ${
                 isOpen ? 'max-h-screen' : 'max-h-0'
                 }`}

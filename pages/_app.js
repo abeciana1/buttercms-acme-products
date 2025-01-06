@@ -2,6 +2,7 @@ import App from "next/app"
 import { getMainMenu } from "@/lib/api"
 import { Provider } from'react-redux'
 import store from '@/redux/store'
+import Instance from '@/components/Instance'
 
 import '@/css/main.css'
 
@@ -13,6 +14,7 @@ function MyApp({ Component, pageProps, mainMenu }) {
     <Provider store={store}>
       <Header key={mainMenu?.meta?.id} mainMenu={mainMenu} />
       <Component {...pageProps} />
+      <Instance />
     </Provider>
   )
 

@@ -14,7 +14,7 @@ export const LinkLookLikeButton = ({
             className={cx('font-bold py-2 px-4 rounded-md text-lg', {
                 ['bg-utilityGreen text-white']: color === 'Green',
                 ['bg-altRed text-white']: color === 'Red',
-                ['bg-orange text-white']: color === 'Orange',
+                ['bg-altOrange text-white']: color === 'Orange',
                 ['bg-skyBlue text-gray-700']: color === 'SkyBlue',
             })}
         >
