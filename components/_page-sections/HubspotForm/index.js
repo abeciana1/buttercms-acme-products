@@ -1,28 +1,31 @@
-import React, { useEffect } from "react";
+import HubspotForm from 'react-hubspot-form'
 
-const HubspotForm = ({ portalId, formId, region, targetElementId }) => {
-    useEffect(() => {
-        const script = document.createElement('script');
-        script.src = 'https://js.hsforms.net/forms/v2.js';
-        document.body.appendChild(script);
+const HubspotFormComponent = ({ portalId, formId, region }) => {
 
-        script.addEventListener('load', () => {
-            if (window.hbspt) {
-                window.hbspt.forms.create({
-                    region: region,
-                    portalId: portalId,
-                    formId: formId,
-                    target: `#${targetElementId}`
-                });
-            }
-        });
+    const submitHandler = () => {
+        console.log('Submitting')
+    }
 
-        return () => {
-            document.body.removeChild(script); // Clean up the script on component unmount
-        };
-    }, [portalId, formId]);
+    const readyLoadHandler = () => {
+        console.log('Form is ready')
+    }
 
-    return <div id={targetElementId} />
+    const loadingState =  () => {
+        return (
+            <div>Loading the form ....</div>
+        )
+    }
+
+    return (
+        <HubspotForm
+            portalId={portalId}
+            formId={formId}
+            region={region}
+            onReady={readyLoadHandler}
+            loading={loadingState}
+            onSubmit={submitHandler}
+        />
+    )
 };
 
-export default HubspotForm;
+export default HubspotFormComponent;
