@@ -1,9 +1,17 @@
-import JotformEmbed from 'react-jotform-embed';
+import Iframe from 'react-iframe'
 
 const Jotform = ({ form }) => {
     return(
         <div>
-            <JotformEmbed src={form?.url} />
+            <Iframe
+                url={form?.url}
+                id={form?.id}
+                display='block'
+                width='100%'
+                height='700'
+                position='relative'
+                scrolling='no'
+            />
         </div>
     )
 }
